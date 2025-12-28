@@ -28,7 +28,7 @@ export default function ContactPage() {
           <input
             type="hidden"
             name="_next"
-            value="http://localhost:3000"
+            value="https://netflix-portfolio-one.vercel.app/"
           />
 
           <input

@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import NeonSmokeCursor from "@/components/NeonSmokeCursor";
 import ParticlesBg from "@/components/ParticlesBg";
 
@@ -23,6 +24,9 @@ export default function RootLayout({
         <div className="page-fade">
           {children}
         </div>
+
+        {/* Vercel Web Analytics */}
+        <Analytics />
       </body>
     </html>
   );

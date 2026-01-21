@@ -331,6 +331,15 @@ p {
     transform: translate(-50%, -110%) scale(2);
   }
 }
+/* Boost smoke visibility on mobile */
+@media (max-width: 768px) {
+  .neon-smoke {
+    width: 90px;
+    height: 90px;
+    opacity: 0.9;
+    filter: blur(8px);
+  }
+}
 
 /* =========================
    MOBILE RESPONSIVENESS

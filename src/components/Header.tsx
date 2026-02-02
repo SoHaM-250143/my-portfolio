@@ -22,7 +22,7 @@ export default function Header() {
       <div className="header-right">
         {/* GitHub */}
         <a
-          href="https://github.com/YOUR_GITHUB_USERNAME"
+          href="https://github.com/SoHaM-250143"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -36,7 +36,7 @@ export default function Header() {
 
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+          href="www.linkedin.com/in/253019-soham-mhatre"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -50,7 +50,7 @@ export default function Header() {
 
         {/* Download Resume */}
         <a
-          href="/resumes/general-resume.pdf"
+          href="/resumes/my_resume.pdf"
           download
           className="resume-btn"
         >

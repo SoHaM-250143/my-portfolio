@@ -13,14 +13,6 @@ export default function SectionPage() {
   const [showProjects, setShowProjects] = useState(false);
   const [showCerts, setShowCerts] = useState(false);
 
-  /* =========================
-     RESUMES
-  ========================= */
-  const resumeMap: Record<string, string> = {
-    "Data Science": "/resumes/data-science-resume.pdf",
-    "Web Development": "/resumes/web-development-resume.pdf",
-    "Full Stack Development": "/resumes/full-stack-resume.pdf",
-  };
 
   /* =========================
      DETAILS
@@ -130,9 +122,6 @@ export default function SectionPage() {
            BUTTONS
         ========================= */}
         <div className="section-buttons">
-          <a href={resumeMap[sectionName]} download className="btn">
-            Download Resume
-          </a>
 
           <button
             className="btn outline"

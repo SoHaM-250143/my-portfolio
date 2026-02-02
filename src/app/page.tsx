@@ -12,13 +12,10 @@ export default function HomePage() {
           HERO SECTION
       ========================= */}
       <div className="home-hero">
-        <h2 className="hero-title">
-          Aspiring Full-Stack Developer building modern web experiences
-        </h2>
 
         <div className="hero-actions">
           <a
-            href="/resumes/general-resume.pdf"
+            href="/my_resume.pdf"
             download
             className="btn"
           >

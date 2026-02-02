@@ -1,10 +1,10 @@
-import "@/styles/globals.css";
-import NeonSmokeCursor from "@/components/NeonSmokeCursor";
-import ParticlesBg from "@/components/ParticlesBg";
+import "./globals.css";
+import type { Metadata } from "next";
+import UnderUpdation from "@/components/UnderUpdation";
 
-export const metadata = {
-  title: "Soham Mhatre Portfolio",
-  description: "Netflix style personal portfolio",
+export const metadata: Metadata = {
+  title: "Soham Mhatre | Portfolio",
+  description: "Personal portfolio website",
 };
 
 export default function RootLayout({
@@ -15,14 +15,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        {/* Global background effects */}
-        <ParticlesBg />
-        <NeonSmokeCursor />
+        {/* UNDER UPDATION OVERLAY */}
+        <UnderUpdation />
 
-        {/* Global page fade wrapper */}
-        <div className="page-fade">
-          {children}
-        </div>
+        {/* ACTUAL WEBSITE (HIDDEN UNDER OVERLAY) */}
+        {children}
       </body>
     </html>
   );

@@ -5,56 +5,57 @@ import { useRouter } from "next/navigation";
 export default function Header() {
   const router = useRouter();
 
-  const goHome = () => {
-    router.push("/");
-  };
-
   return (
     <header className="header">
-      {/* LEFT SIDE: LOGO + NAME */}
+      {/* LEFT: LOGO + NAME */}
       <div className="header-left">
         <img
           src="/logo.png"
-          alt="Soham Mhatre Portfolio Logo"
+          alt="Portfolio Logo"
           className="logo"
-          role="button"
-          tabIndex={0}
-          onClick={goHome}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") goHome();
-          }}
+          onClick={() => router.push("/")}
         />
         <h1 className="name">Soham Mhatre</h1>
       </div>
 
-      {/* RIGHT SIDE: SOCIAL LINKS */}
+      {/* RIGHT: SOCIALS + RESUME */}
       <div className="header-right">
+        {/* GitHub */}
         <a
-          href="https://github.com/SoHaM-250143"
+          href="https://github.com/YOUR_GITHUB_USERNAME"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          🐙
+          <img
+            src="/icons/github.svg"
+            alt="GitHub"
+            className="social-icon"
+          />
         </a>
 
+        {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/253019-soham-mhatre"
+          href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          💼
+          <img
+            src="/icons/linkedin.svg"
+            alt="LinkedIn"
+            className="social-icon"
+          />
         </a>
 
+        {/* Download Resume */}
         <a
-         href="/contact"
-         className="contact-btn"
-          aria-label="Contact"
+          href="/resumes/general-resume.pdf"
+          download
+          className="resume-btn"
         >
-          Contact
+          Download Resume
         </a>
-
       </div>
     </header>
   );

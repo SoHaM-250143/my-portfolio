@@ -36,7 +36,7 @@ export default function Header() {
 
         {/* LinkedIn */}
         <a
-          href="www.linkedin.com/in/253019-soham-mhatre"
+          href="https://www.linkedin.com/in/253019-soham-mhatre/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

@@ -1,25 +1,27 @@
 import "./globals.css";
-import type { Metadata } from "next";
-import UnderUpdation from "@/components/UnderUpdation";
 
-export const metadata: Metadata = {
-  title: "Soham Mhatre | Portfolio",
-  description: "Personal portfolio website",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout() {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en">
       <body>
-        {/* UNDER UPDATION OVERLAY */}
-        <UnderUpdation />
+        <div className="updation-overlay">
+          {/* TOP LEFT: LOGO + NAME */}
+          <div className="updation-top-left">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="updation-logo"
+            />
+            <span className="updation-name">Soham Mhatre</span>
+          </div>
 
-        {/* ACTUAL WEBSITE (HIDDEN UNDER OVERLAY) */}
-        {children}
+          {/* CENTER MESSAGE */}
+          <div className="updation-center">
+            <h1>🚧 Website Under Updation</h1>
+            <p>I am currently improving this website.</p>
+            <p>Please check back soon.</p>
+          </div>
+        </div>
       </body>
     </html>
   );

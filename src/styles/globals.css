@@ -387,7 +387,7 @@ p {
   }
 }
 /* =========================
-   UNDER UPDATION OVERLAY
+   UNDER UPDATION MODE (FINAL)
 ========================= */
 
 .updation-overlay {
@@ -397,16 +397,25 @@ p {
   z-index: 999999;
 }
 
-/* Hide everything except logo + name */
-.updation-header .header-right {
-  display: none;
+/* Top-left logo + name */
+.updation-top-left {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Lock header to top-left */
-.updation-header .header {
-  justify-content: flex-start;
-  padding: 20px 30px;
-  background: transparent;
+.updation-logo {
+  width: 46px;
+  height: 46px;
+}
+
+.updation-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: cyan;
 }
 
 /* Center message */
@@ -427,4 +436,5 @@ p {
   font-size: 16px;
   opacity: 0.9;
 }
+
 

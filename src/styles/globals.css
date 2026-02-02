@@ -386,3 +386,34 @@ p {
     height: 90px;
   }
 }
+/* =========================
+   WEBSITE UNDER UPDATION
+========================= */
+
+.updation-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.updation-box {
+  text-align: center;
+  padding: 40px;
+  border-radius: 12px;
+  border: 2px solid cyan;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.updation-box h1 {
+  margin-bottom: 12px;
+}
+
+.updation-box p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+

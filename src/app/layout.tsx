@@ -15,7 +15,7 @@ export default function RootLayout() {
             <span className="updation-name">Soham Mhatre</span>
           </div>
 
-          {/* CENTER MESSAGE */}
+          {/* PERFECT CENTER MESSAGE */}
           <div className="updation-center">
             <h1>🚧 Website Under Updation</h1>
             <p>I am currently improving this website.</p>

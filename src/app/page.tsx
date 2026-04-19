@@ -8,10 +8,7 @@ export default function HomePage() {
     <>
       <Header />
 
-      
-      {/* =========================
-          HERO SECTION
-      ========================= */}
+
       <div className="home-hero">
 
         <div className="hero-actions">

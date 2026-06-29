@@ -90,6 +90,14 @@ export default function SectionPage() {
         github: "https://github.com/SoHaM-250143/clinical-data-forensics-system",
       },
       {
+        title: "Disney+ OTT Platform Dashboard",
+        description: "An interactive Power BI dashboard analyzing Disney+ platform metrics including titles, viewer ratings, release timelines, and geographical show distributions.",
+        details: "Developed a comprehensive business intelligence dashboard to visualize content distribution on Disney+. Integrated metric cards tracking 1,450 total titles across 329 genres, 610 directors, and release timelines from 1928 to 2021. Designed dynamic donut charts for TV Show vs. Movie content distribution (72.5% Movies), horizontal bar charts for ratings distribution (TV-G, TV-PG) and top genres, timeline trend visuals, and geospatial maps mapping total shows by country.",
+        tech: ["Power BI", "Data Visualization", "DAX Formulas", "ETL Processing", "Data Modeling", "Excel"],
+        image: "/projects/ott-dashboard.png",
+        github: "https://github.com/SoHaM-250143/OTT-Platform-Dashboard",
+      },
+      {
         title: "Sales Performance Analysis",
         description: "Analyzed retail sales trends and customer behavior using Python, Pandas, and interactive dashboards.",
         details: "Conducted exploratory data analysis (EDA) on transactional datasets to find key sales drivers, seasonal purchasing patterns, and customer segment profitability. Cleaned unstructured data, performed feature engineering, and designed visual charts to translate complex data into business decisions.",

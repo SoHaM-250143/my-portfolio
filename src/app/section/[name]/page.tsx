@@ -82,6 +82,14 @@ export default function SectionPage() {
     ],
     "Data Analysis": [
       {
+        title: "Clinical Data Forensics & Pattern Detection",
+        description: "A multimodal data ingestion and forensic mapping pipeline designed to process unstructured clinical reports and extract deep-learning diagnostic anomalies.",
+        details: "Developed an intelligent clinical data forensics pipeline that ingests multimodal patient reports (such as CT Chest radiology files) and corresponding physical scan parameters (slice thickness, exposure mAs, KVP, and Hounsfield Unit density values). Features dynamic ICD-10 medical diagnostics categorization, few-shot prototype similarity matching, vector embeddings parsing, and forensic anomaly scoring to identify irregular clinical patterns.",
+        tech: ["Next.js", "Python FastAPI", "Deep Learning", "Vector Embeddings", "Few-Shot Classification", "Hounsfield Unit Analytics"],
+        image: "/projects/clinical-forensics.png",
+        github: "https://github.com/SoHaM-250143/clinical-data-forensics-system",
+      },
+      {
         title: "Sales Performance Analysis",
         description: "Analyzed retail sales trends and customer behavior using Python, Pandas, and interactive dashboards.",
         details: "Conducted exploratory data analysis (EDA) on transactional datasets to find key sales drivers, seasonal purchasing patterns, and customer segment profitability. Cleaned unstructured data, performed feature engineering, and designed visual charts to translate complex data into business decisions.",

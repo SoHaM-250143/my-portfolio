@@ -122,6 +122,12 @@ export default function SectionPage() {
   > = {
     "Data Science": [
       {
+        title: "Python Machine Learning: From Beginner to Pro",
+        issuer: "Udemy",
+        year: "2026",
+        link: "/certificates/python-machine-learning-cert.pdf",
+      },
+      {
         title: "Data Science with Python",
         issuer: "Coursera",
         year: "2024",

@@ -118,6 +118,12 @@ export default function HomePage() {
               link: "/certificates/advanced-powerbi-cert.pdf",
             },
             {
+              title: "Python Machine Learning: From Beginner to Pro",
+              issuer: "Udemy",
+              year: "2026",
+              link: "/certificates/python-machine-learning-cert.pdf",
+            },
+            {
               title: "Full Stack Development",
               issuer: "Internshala",
               year: "2024",

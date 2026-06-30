@@ -4,20 +4,23 @@ import { useEffect, useState } from "react";
 
 export default function NeonSmokeCursor() {
   const [enabled, setEnabled] = useState(true);
+  const [density, setDensity] = useState(3);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const checkEnabled = () => {
+    const checkSettings = () => {
       const isEnabled = localStorage.getItem("smoke-enabled") !== "false";
       setEnabled(isEnabled);
+      const savedDensity = parseInt(localStorage.getItem("smoke-density") || "3", 10);
+      setDensity(savedDensity);
     };
 
-    checkEnabled();
-    window.addEventListener("theme-settings-changed", checkEnabled);
+    checkSettings();
+    window.addEventListener("theme-settings-changed", checkSettings);
 
     return () => {
-      window.removeEventListener("theme-settings-changed", checkEnabled);
+      window.removeEventListener("theme-settings-changed", checkSettings);
     };
   }, []);
 
@@ -25,6 +28,19 @@ export default function NeonSmokeCursor() {
     if (typeof window === "undefined" || !enabled) return;
 
     let lastTime = 0;
+
+    const getThrottleDelay = (d: number) => {
+      switch (d) {
+        case 1: return 120;
+        case 2: return 80;
+        case 3: return 40;
+        case 4: return 20;
+        case 5: return 8;
+        default: return 40;
+      }
+    };
+
+    const delay = getThrottleDelay(density);
 
     const createSmoke = (x: number, y: number) => {
       const smoke = document.createElement("div");
@@ -41,7 +57,7 @@ export default function NeonSmokeCursor() {
 
     const handleMouseMove = (e: MouseEvent) => {
       const now = Date.now();
-      if (now - lastTime < 40) return;
+      if (now - lastTime < delay) return;
       lastTime = now;
 
       createSmoke(e.clientX, e.clientY);
@@ -49,7 +65,7 @@ export default function NeonSmokeCursor() {
 
     const handleTouchMove = (e: TouchEvent) => {
       const now = Date.now();
-      if (now - lastTime < 60) return;
+      if (now - lastTime < delay + 20) return;
       lastTime = now;
 
       const touch = e.touches[0];
@@ -65,7 +81,7 @@ export default function NeonSmokeCursor() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [enabled]);
+  }, [enabled, density]);
 
   return null;
 }

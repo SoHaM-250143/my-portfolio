@@ -6,16 +6,14 @@ import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 
 const sectionVariants = {
-  hidden: { opacity: 0, y: 60, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    filter: "blur(0px)",
     transition: { 
-      type: "spring",
-      stiffness: 45, 
-      damping: 15,
-      duration: 0.8
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.6
     } 
   }
 } as const;

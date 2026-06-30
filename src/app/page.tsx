@@ -1,8 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 60, filter: "blur(6px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)",
+    transition: { 
+      type: "spring",
+      stiffness: 45, 
+      damping: 15,
+      duration: 0.8
+    } 
+  }
+} as const;
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
@@ -42,7 +58,13 @@ export default function HomePage() {
     <>
       <Header />
 
-      <section className="education-section">
+      <motion.section 
+        className="education-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        variants={sectionVariants}
+      >
         <h2 className="education-title">🎓 Education</h2>
         <div className="timeline-container">
           {/* Navigation panel */}
@@ -79,9 +101,15 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="skills-section">
+      <motion.section 
+        className="skills-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        variants={sectionVariants}
+      >
         <h2 className="skills-title">💻 Skills</h2>
         <div className="home">
         <SectionCard
@@ -105,9 +133,15 @@ export default function HomePage() {
 
         <SectionCard title="Loading" />
         </div>
-      </section>
+      </motion.section>
 
-      <section className="certifications-section">
+      <motion.section 
+        className="certifications-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        variants={sectionVariants}
+      >
         <h2 className="certifications-title">📜 Certifications</h2>
         <div className="certifications-list">
           {[
@@ -141,24 +175,6 @@ export default function HomePage() {
               year: "2026",
               link: "/certificates/django-cert.pdf",
             },
-            {
-              title: "Full Stack Development",
-              issuer: "Internshala",
-              year: "2024",
-              link: "/certificates/full-stack-cert.pdf",
-            },
-            {
-              title: "Data Science with Python",
-              issuer: "Coursera",
-              year: "2024",
-              link: "/certificates/data-science-cert.pdf",
-            },
-            {
-              title: "Frontend Web Development",
-              issuer: "Udemy",
-              year: "2023",
-              link: "/certificates/web-development-cert.pdf",
-            },
           ].map((cert, i) => (
             <div key={i} className="cert-card">
               <div className="cert-info">
@@ -180,9 +196,15 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="contact-section">
+      <motion.section 
+        className="contact-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        variants={sectionVariants}
+      >
         <h2 className="contact-title">📬 Contact Me</h2>
         <form
           className="contact-form"
@@ -221,7 +243,7 @@ export default function HomePage() {
             Send Message
           </button>
         </form>
-      </section>
+      </motion.section>
     </>
   );
 }

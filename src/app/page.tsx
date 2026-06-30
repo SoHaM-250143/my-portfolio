@@ -60,7 +60,7 @@ export default function HomePage() {
         className="education-section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={sectionVariants}
       >
         <h2 className="education-title">🎓 Education</h2>
@@ -105,7 +105,7 @@ export default function HomePage() {
         className="skills-section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={sectionVariants}
       >
         <h2 className="skills-title">💻 Skills</h2>
@@ -137,7 +137,7 @@ export default function HomePage() {
         className="certifications-section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={sectionVariants}
       >
         <h2 className="certifications-title">📜 Certifications</h2>
@@ -200,7 +200,7 @@ export default function HomePage() {
         className="contact-section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={sectionVariants}
       >
         <h2 className="contact-title">📬 Contact Me</h2>

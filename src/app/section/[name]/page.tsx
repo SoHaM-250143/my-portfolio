@@ -98,20 +98,12 @@ export default function SectionPage() {
         github: "https://github.com/SoHaM-250143/OTT-Platform-Dashboard",
       },
       {
-        title: "Sales Performance Analysis",
-        description: "Analyzed retail sales trends and customer behavior using Python, Pandas, and interactive dashboards.",
-        details: "Conducted exploratory data analysis (EDA) on transactional datasets to find key sales drivers, seasonal purchasing patterns, and customer segment profitability. Cleaned unstructured data, performed feature engineering, and designed visual charts to translate complex data into business decisions.",
-        tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter Notebook"],
-        image: "/projects/sales-analysis.png",
-        github: "https://github.com/SoHaM-250143/Sales-Data-Analysis",
-      },
-      {
-        title: "SQL Customer Insights & Cohort Analysis",
-        description: "Identified customer retention trends and purchasing cohorts using PostgreSQL queries.",
-        details: "Created advanced SQL queries (CTEs, Window Functions, Joins) to track user retention metrics, churn rates, and lifetime value (LTV). Designed cohort tables to analyze repeat purchase behavior, helping segment high-value customers for targeted campaigns.",
-        tech: ["PostgreSQL", "SQL Server", "Database Design", "Data Modeling"],
-        image: "/projects/student-prediction.png",
-        github: "https://github.com/SoHaM-250143",
+        title: "Tableau Social Media Analytics Dashboard",
+        description: "An interactive Tableau dashboard that tracks cross-platform user engagement across Facebook, Instagram, LinkedIn, TikTok, and Twitter.",
+        details: "Designed and developed a comprehensive Tableau dashboard to analyze social media performance indicators across 15,000 total posts. Created custom KPI cards tracking 37.9M Likes, 1.5M Comments, and 3.7M Shares. Features a comparative double-bar engagement metric chart by platform, a line graph highlighting engagement timelines (2023-2025), a platform post-count pie chart, and a top-10 performing post heat-map matrix to track viral content characteristics.",
+        tech: ["Tableau", "Data Analysis", "KPI Reporting", "Interactive Dashboarding", "Data Extraction", "CSV Parsing"],
+        image: "/projects/social-media-dashboard.png",
+        github: "https://github.com/SoHaM-250143/Social-Media-Analysis-Dashboard",
       }
     ],
   };

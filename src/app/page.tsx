@@ -112,6 +112,12 @@ export default function HomePage() {
         <div className="certifications-list">
           {[
             {
+              title: "Advanced Power BI: Expert Data Analysis and Visualization",
+              issuer: "Udemy",
+              year: "2026",
+              link: "/certificates/advanced-powerbi-cert.pdf",
+            },
+            {
               title: "Full Stack Development",
               issuer: "Internshala",
               year: "2024",

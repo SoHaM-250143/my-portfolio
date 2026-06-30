@@ -127,12 +127,6 @@ export default function SectionPage() {
         year: "2026",
         link: "/certificates/python-machine-learning-cert.pdf",
       },
-      {
-        title: "Data Science with Python",
-        issuer: "Coursera",
-        year: "2024",
-        link: "/certificates/data-science-cert.pdf",
-      },
     ],
     "Web Development": [
       {
@@ -140,12 +134,6 @@ export default function SectionPage() {
         issuer: "Udemy",
         year: "2026",
         link: "/certificates/nextjs-cert.pdf",
-      },
-      {
-        title: "Frontend Web Development",
-        issuer: "Udemy",
-        year: "2023",
-        link: "/certificates/web-development-cert.pdf",
       },
     ],
     "Full Stack Development": [
@@ -161,12 +149,6 @@ export default function SectionPage() {
         year: "2026",
         link: "/certificates/django-cert.pdf",
       },
-      {
-        title: "Full Stack Development",
-        issuer: "Internshala",
-        year: "2024",
-        link: "/certificates/full-stack-cert.pdf",
-      },
     ],
     "Data Analysis": [
       {
@@ -174,12 +156,6 @@ export default function SectionPage() {
         issuer: "Udemy",
         year: "2026",
         link: "/certificates/advanced-powerbi-cert.pdf",
-      },
-      {
-        title: "Data Science with Python",
-        issuer: "Coursera",
-        year: "2024",
-        link: "/certificates/data-science-cert.pdf",
       },
     ],
   };

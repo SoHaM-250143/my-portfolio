@@ -1,22 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.6
-    } 
-  }
-} as const;
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
@@ -56,13 +42,7 @@ export default function HomePage() {
     <>
       <Header />
 
-      <motion.section 
-        className="education-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={sectionVariants}
-      >
+      <section className="education-section">
         <h2 className="education-title">🎓 Education</h2>
         <div className="timeline-container">
           {/* Navigation panel */}
@@ -99,15 +79,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
-        className="skills-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={sectionVariants}
-      >
+      <section className="skills-section">
         <h2 className="skills-title">💻 Skills</h2>
         <div className="home">
         <SectionCard
@@ -131,15 +105,9 @@ export default function HomePage() {
 
         <SectionCard title="Loading" />
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
-        className="certifications-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={sectionVariants}
-      >
+      <section className="certifications-section">
         <h2 className="certifications-title">📜 Certifications</h2>
         <div className="certifications-list">
           {[
@@ -194,15 +162,9 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
-        className="contact-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={sectionVariants}
-      >
+      <section className="contact-section">
         <h2 className="contact-title">📬 Contact Me</h2>
         <form
           className="contact-form"
@@ -241,7 +203,7 @@ export default function HomePage() {
             Send Message
           </button>
         </form>
-      </motion.section>
+      </section>
     </>
   );
 }

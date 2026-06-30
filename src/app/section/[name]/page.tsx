@@ -27,7 +27,7 @@ export default function SectionPage() {
   ========================= */
   const detailsMap: Record<string, string> = {
     "Data Science":
-      "Worked on data analysis, data preprocessing, visualization, and learning machine learning fundamentals using Python.",
+      "Specialized in Python Machine Learning, predictive modeling, and feature engineering. Experienced in building and evaluating supervised/unsupervised algorithms (Regression, Random Forests, XGBoost) using Scikit-Learn.",
     "Web Development":
       "Built responsive and interactive web interfaces using HTML, CSS, JavaScript, React, and modern UI principles.",
     "Full Stack Development":
@@ -52,12 +52,12 @@ export default function SectionPage() {
   > = {
     "Data Science": [
       {
-        title: "Sales Data Analysis",
-        description: "Analyzed sales data using Python, pandas, and visualizations to uncover trends.",
-        details: "A comprehensive data analysis workflow utilizing Python's powerful libraries. Performed extensive data cleaning, handled missing values, and constructed descriptive statistical visualizations (using Matplotlib and Seaborn) to highlight customer behavior, peak sales periods, and profitable item categories.",
-        tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter"],
-        image: "/projects/sales-analysis.png",
-        github: "https://github.com/SoHaM-250143/Sales-Data-Analysis",
+        title: "Student Performance Prediction",
+        description: "Developed a supervised machine learning regression model to predict student academic outcomes based on demographic and study habits.",
+        details: "Conducted data preprocessing, feature encoding, and correlation analysis on student performance datasets. Trained multiple regression algorithms (Linear Regression, Decision Trees, and Random Forests) using Scikit-Learn. Optimized hyperparameters to achieve 92% prediction accuracy and created feature importance plots to identify key predictors of academic success.",
+        tech: ["Python", "Machine Learning", "Scikit-Learn", "Regression", "Feature Engineering", "Pandas"],
+        image: "/projects/student-prediction.png",
+        github: "https://github.com/SoHaM-250143/Student-Performance-Prediction",
       },
     ],
     "Web Development": [
@@ -136,6 +136,12 @@ export default function SectionPage() {
     ],
     "Web Development": [
       {
+        title: "Next.js: Build Dynamic, Fast & Scalable Web Applications",
+        issuer: "Udemy",
+        year: "2026",
+        link: "/certificates/nextjs-cert.pdf",
+      },
+      {
         title: "Frontend Web Development",
         issuer: "Udemy",
         year: "2023",
@@ -143,6 +149,18 @@ export default function SectionPage() {
       },
     ],
     "Full Stack Development": [
+      {
+        title: "Master Node.js: From Beginner to Full-Stack Developer",
+        issuer: "Udemy",
+        year: "2026",
+        link: "/certificates/nodejs-cert.pdf",
+      },
+      {
+        title: "Django Masterclass: Get Started With Django Web Development",
+        issuer: "Udemy",
+        year: "2026",
+        link: "/certificates/django-cert.pdf",
+      },
       {
         title: "Full Stack Development",
         issuer: "Internshala",

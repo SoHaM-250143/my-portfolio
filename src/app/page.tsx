@@ -124,6 +124,24 @@ export default function HomePage() {
               link: "/certificates/python-machine-learning-cert.pdf",
             },
             {
+              title: "Next.js: Build Dynamic, Fast & Scalable Web Applications",
+              issuer: "Udemy",
+              year: "2026",
+              link: "/certificates/nextjs-cert.pdf",
+            },
+            {
+              title: "Master Node.js: From Beginner to Full-Stack Developer",
+              issuer: "Udemy",
+              year: "2026",
+              link: "/certificates/nodejs-cert.pdf",
+            },
+            {
+              title: "Django Masterclass: Get Started With Django Web Development",
+              issuer: "Udemy",
+              year: "2026",
+              link: "/certificates/django-cert.pdf",
+            },
+            {
               title: "Full Stack Development",
               issuer: "Internshala",
               year: "2024",

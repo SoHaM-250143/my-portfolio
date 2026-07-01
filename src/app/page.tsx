@@ -1,11 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
+  const [accentHex, setAccentHex] = useState("00ffff");
+
+  useEffect(() => {
+    const updateAccent = () => {
+      const savedHex = localStorage.getItem("theme-color-hex") || "#00ffff";
+      setAccentHex(savedHex.replace("#", ""));
+    };
+    updateAccent();
+    window.addEventListener("theme-settings-changed", updateAccent);
+    return () => window.removeEventListener("theme-settings-changed", updateAccent);
+  }, []);
 
   const educationData = [
     {
@@ -104,6 +115,61 @@ export default function HomePage() {
         />
 
         <SectionCard title="Loading" />
+        </div>
+      </section>
+
+      <section className="github-section">
+        <h2 className="github-title">🐙 GitHub Activity</h2>
+        <div className="github-content">
+          {/* Left Column: Achievements */}
+          <div className="github-achievements">
+            <h3>Badges & Milestones</h3>
+            <div className="achievements-grid">
+              <div className="achievement-badge">
+                <div className="badge-icon">🦈</div>
+                <div className="badge-info">
+                  <h4>Pull Shark</h4>
+                  <p>Opened pull requests that were successfully merged</p>
+                </div>
+              </div>
+              <div className="achievement-badge">
+                <div className="badge-icon">🏹</div>
+                <div className="badge-info">
+                  <h4>Quickdraw</h4>
+                  <p>Resolved issues or pull requests in record time</p>
+                </div>
+              </div>
+              <div className="achievement-badge">
+                <div className="badge-icon">🛸</div>
+                <div className="badge-info">
+                  <h4>Yolo</h4>
+                  <p>Directly merged code updates for fast iterations</p>
+                </div>
+              </div>
+              <div className="achievement-badge">
+                <div className="badge-icon">❄️</div>
+                <div className="badge-info">
+                  <h4>Arctic Code Vault</h4>
+                  <p>Contributed to code in the GitHub Archive program</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Contributions */}
+          <div className="github-contributions">
+            <h3>Ongoing Month Contributions</h3>
+            <div className="contributions-card">
+              <img 
+                src={`https://ghchart.rshah.org/${accentHex}/SoHaM-250143`} 
+                alt="Soham's GitHub Contributions" 
+                className="github-chart-img" 
+              />
+              <p className="contributions-footer">
+                Live contribution feed powered by GitHub Activity tracker.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

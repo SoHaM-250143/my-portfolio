@@ -508,13 +508,16 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 60px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .education-title {
   font-size: 28px;
   margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
+  text-align: left;
+  color: #fff;
+  border-bottom: 1.5px solid rgba(var(--accent-color-rgb), 0.2);
+  padding-bottom: 10px;
 }
 
 .timeline-container {
@@ -802,14 +805,20 @@ p {
 ========================= */
 
 .skills-section {
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 60px 0;
+  text-align: left;
 }
 
 .skills-title {
   font-size: 28px;
-  margin-top: 60px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
+  margin-top: 0px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #fff;
+  border-bottom: 1.5px solid rgba(var(--accent-color-rgb), 0.2);
+  padding-bottom: 10px;
 }
 
 /* =========================
@@ -820,13 +829,16 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 60px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .certifications-title {
   font-size: 28px;
   margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
+  text-align: left;
+  color: #fff;
+  border-bottom: 1.5px solid rgba(var(--accent-color-rgb), 0.2);
+  padding-bottom: 10px;
 }
 
 .certifications-cards {
@@ -884,13 +896,16 @@ p {
   max-width: 600px;
   margin: 0 auto;
   padding: 60px 40px 80px;
-  text-align: center;
+  text-align: left;
 }
 
 .contact-title {
   font-size: 28px;
   margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
+  text-align: left;
+  color: #fff;
+  border-bottom: 1.5px solid rgba(var(--accent-color-rgb), 0.2);
+  padding-bottom: 10px;
 }
 
 /* =========================
@@ -1666,5 +1681,128 @@ input:checked + .slider::before {
   50% {
     transform: scale(1.05);
     filter: drop-shadow(0 0 25px rgba(var(--accent-color-rgb), 0.9));
+  }
+}
+
+/* =========================
+   GITHUB SECTION
+========================= */
+
+.github-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 60px 0;
+}
+
+.github-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #fff;
+  border-bottom: 1.5px solid rgba(var(--accent-color-rgb), 0.2);
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.github-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.github-achievements h3,
+.github-contributions h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(17, 17, 17, 0.6);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.achievement-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.15);
+}
+
+.badge-icon {
+  font-size: 32px;
+  filter: drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.3));
+}
+
+.badge-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 15px;
+  color: var(--accent-color);
+}
+
+.badge-info p {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+.contributions-card {
+  padding: 24px;
+  border-radius: 12px;
+  background: rgba(17, 17, 17, 0.6);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.github-chart-img {
+  width: 100%;
+  max-width: 100%;
+  filter: drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.25));
+  border-radius: 4px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contributions-footer {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .github-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
   }
 }

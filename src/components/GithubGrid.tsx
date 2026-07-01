@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 interface ContributionDay {
   date: string;
   level: number;
+  countText?: string;
 }
 
 export default function GithubGrid() {
@@ -90,6 +91,7 @@ export default function GithubGrid() {
     alignedDays = Array.from({ length: 35 }, (_, i) => ({
       date: `Day ${i + 1}`,
       level: 0,
+      countText: "No contributions",
     }));
     monthLabels = ["Jun", "", "", "", "Jul"];
   }
@@ -139,10 +141,7 @@ export default function GithubGrid() {
                 }}
               >
                 <span className="tooltip">
-                  {day.level === 0
-                    ? "No contributions"
-                    : `${day.level} levels of activity`}{" "}
-                  on {formatDate(day.date)}
+                  {day.countText || "No contributions"} on {formatDate(day.date)}
                 </span>
               </div>
             );

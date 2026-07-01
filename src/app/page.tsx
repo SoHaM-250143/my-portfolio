@@ -1,22 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
+import GithubGrid from "@/components/GithubGrid";
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
-  const [accentHex, setAccentHex] = useState("00ffff");
-
-  useEffect(() => {
-    const updateAccent = () => {
-      const savedHex = localStorage.getItem("theme-color-hex") || "#00ffff";
-      setAccentHex(savedHex.replace("#", ""));
-    };
-    updateAccent();
-    window.addEventListener("theme-settings-changed", updateAccent);
-    return () => window.removeEventListener("theme-settings-changed", updateAccent);
-  }, []);
 
   const educationData = [
     {
@@ -160,13 +150,7 @@ export default function HomePage() {
           <div className="github-contributions">
             <h3>Ongoing Month Contributions</h3>
             <div className="contributions-card">
-              <div className="github-chart-container">
-                <img 
-                  src={`https://ghchart.rshah.org/${accentHex}/SoHaM-250143`} 
-                  alt="Soham's GitHub Contributions" 
-                  className="github-chart-img" 
-                />
-              </div>
+              <GithubGrid />
               <p className="contributions-footer">
                 Live contribution feed powered by GitHub Activity tracker (last 30 days).
               </p>

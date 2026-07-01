@@ -148,7 +148,7 @@ export default function HomePage() {
 
           {/* Right Column: Contributions */}
           <div className="github-contributions">
-            <h3>Ongoing Month Contributions</h3>
+            <h3>Last 30 days Contributions</h3>
             <div className="contributions-card">
               <GithubGrid />
               <p className="contributions-footer">

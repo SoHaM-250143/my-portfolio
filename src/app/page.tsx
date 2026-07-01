@@ -160,13 +160,15 @@ export default function HomePage() {
           <div className="github-contributions">
             <h3>Ongoing Month Contributions</h3>
             <div className="contributions-card">
-              <img 
-                src={`https://ghchart.rshah.org/${accentHex}/SoHaM-250143`} 
-                alt="Soham's GitHub Contributions" 
-                className="github-chart-img" 
-              />
+              <div className="github-chart-container">
+                <img 
+                  src={`https://ghchart.rshah.org/${accentHex}/SoHaM-250143`} 
+                  alt="Soham's GitHub Contributions" 
+                  className="github-chart-img" 
+                />
+              </div>
               <p className="contributions-footer">
-                Live contribution feed powered by GitHub Activity tracker.
+                Live contribution feed powered by GitHub Activity tracker (last 30 days).
               </p>
             </div>
           </div>

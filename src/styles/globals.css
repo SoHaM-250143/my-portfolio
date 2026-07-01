@@ -1780,19 +1780,29 @@ input:checked + .slider::before {
   backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
-.github-chart-img {
+.github-chart-container {
   width: 100%;
-  max-width: 100%;
-  filter: drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.25));
-  border-radius: 4px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
+  height: 140px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.github-chart-img {
+  height: 520px;
+  width: auto;
+  max-width: none;
+  filter: drop-shadow(0 0 10px rgba(var(--accent-color-rgb), 0.35));
+  margin-right: -42px;
+  pointer-events: none;
 }
 
 .contributions-footer {

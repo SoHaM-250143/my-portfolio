@@ -52,14 +52,6 @@ export default function SectionPage() {
   > = {
     "Data Science": [
       {
-        title: "Student Performance Prediction",
-        description: "Developed a supervised machine learning regression model to predict student academic outcomes based on demographic and study habits.",
-        details: "Conducted data preprocessing, feature encoding, and correlation analysis on student performance datasets. Trained multiple regression algorithms (Linear Regression, Decision Trees, and Random Forests) using Scikit-Learn. Optimized hyperparameters to achieve 92% prediction accuracy and created feature importance plots to identify key predictors of academic success.",
-        tech: ["Python", "Machine Learning", "Scikit-Learn", "Regression", "Feature Engineering", "Pandas"],
-        image: "/projects/student-prediction.png",
-        github: "https://github.com/SoHaM-250143/Student-Performance-Prediction",
-      },
-      {
         title: "CliniFlow AI: Rare Disease Detection System",
         description: "An AI-powered clinical analytics and anomaly detection system for parsing medical reports and identifying rare disease patterns.",
         details: "Developed CliniFlow AI, a multimodal diagnostic pipeline that ingests unstructured clinical reports and processes scan metadata. Integrated automated ICD-10 disease categorization, few-shot prototype similarity matching, and a dynamic doctor-facing web dashboard featuring weekly report trends, disease distribution charts, and real-time AI anomaly predictions.",
@@ -103,14 +95,6 @@ export default function SectionPage() {
       },
     ],
     "Full Stack Development": [
-      {
-        title: "Student Result Management System",
-        description: "Built a full-stack student result system with database integration.",
-        details: "Developed a secure student result repository allowing teachers to input academic performance and students to retrieve report cards dynamically. Secured with JWT user authentication, MongoDB schemas, and a responsive frontend dashboard.",
-        tech: ["React.js", "Node.js", "Express.js", "MongoDB", "CSS Modules"],
-        image: "/projects/student-result.png",
-        github: "https://github.com/SoHaM-250143/Student-Result-Management-System",
-      },
       {
         title: "Home Rental Portal",
         description: "Built a full-stack real-estate portal for property listings, reservation management, and booking scheduling.",

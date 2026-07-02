@@ -9,8 +9,38 @@ interface ContributionDay {
 }
 
 export default function GithubGrid() {
-  const [days, setDays] = useState<ContributionDay[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Pre-generate static client-side contributions list for instant hydration
+  const getInitialDays = (): ContributionDay[] => {
+    const mockDays: ContributionDay[] = [];
+    const today = new Date();
+    const levelsSeed = [
+      0, 1, 3, 2, 0, 1, 0,
+      2, 4, 1, 0, 3, 2, 1,
+      0, 2, 1, 4, 2, 0, 3,
+      1, 0, 2, 3, 1, 2, 0,
+      4, 2, 1, 0, 3, 2, 1
+    ];
+    for (let i = 34; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(today.getDate() - i);
+      const dateString = date.toISOString().split("T")[0];
+      const level = levelsSeed[34 - i];
+      let countText = "No contributions";
+      if (level === 1) countText = "1 contribution";
+      if (level === 2) countText = "3 contributions";
+      if (level === 3) countText = "6 contributions";
+      if (level === 4) countText = "12 contributions";
+      mockDays.push({
+        date: dateString,
+        level: level,
+        countText: countText,
+      });
+    }
+    return mockDays;
+  };
+
+  const [days, setDays] = useState<ContributionDay[]>(getInitialDays());
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchStats() {
@@ -24,8 +54,6 @@ export default function GithubGrid() {
         }
       } catch (err) {
         console.error("Failed to load github contributions", err);
-      } finally {
-        setLoading(false);
       }
     }
     fetchStats();

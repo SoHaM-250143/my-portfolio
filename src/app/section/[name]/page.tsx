@@ -59,6 +59,14 @@ export default function SectionPage() {
         image: "/projects/student-prediction.png",
         github: "https://github.com/SoHaM-250143/Student-Performance-Prediction",
       },
+      {
+        title: "CliniFlow AI: Rare Disease Detection System",
+        description: "An AI-powered clinical analytics and anomaly detection system for parsing medical reports and identifying rare disease patterns.",
+        details: "Developed CliniFlow AI, a multimodal diagnostic pipeline that ingests unstructured clinical reports and processes scan metadata. Integrated automated ICD-10 disease categorization, few-shot prototype similarity matching, and a dynamic doctor-facing web dashboard featuring weekly report trends, disease distribution charts, and real-time AI anomaly predictions.",
+        tech: ["Next.js", "Python FastAPI", "Deep Learning", "Vector Embeddings", "Few-Shot Classification", "Data Visualization"],
+        image: "/projects/clinical-forensics.png",
+        github: "https://github.com/SoHaM-250143/CliniFlo-AI-Rare-Diesease-Detection-System-",
+      },
     ],
     "Web Development": [
       {
@@ -81,14 +89,6 @@ export default function SectionPage() {
       },
     ],
     "Data Analysis": [
-      {
-        title: "Clinical Data Forensics & Pattern Detection",
-        description: "A multimodal data ingestion and forensic mapping pipeline designed to process unstructured clinical reports and extract deep-learning diagnostic anomalies.",
-        details: "Developed an intelligent clinical data forensics pipeline that ingests multimodal patient reports (such as CT Chest radiology files) and corresponding physical scan parameters (slice thickness, exposure mAs, KVP, and Hounsfield Unit density values). Features dynamic ICD-10 medical diagnostics categorization, few-shot prototype similarity matching, vector embeddings parsing, and forensic anomaly scoring to identify irregular clinical patterns.",
-        tech: ["Next.js", "Python FastAPI", "Deep Learning", "Vector Embeddings", "Few-Shot Classification", "Hounsfield Unit Analytics"],
-        image: "/projects/clinical-forensics.png",
-        github: "https://github.com/SoHaM-250143/clinical-data-forensics-system",
-      },
       {
         title: "Disney+ OTT Platform Dashboard",
         description: "An interactive Power BI dashboard analyzing Disney+ platform metrics including titles, viewer ratings, release timelines, and geographical show distributions.",

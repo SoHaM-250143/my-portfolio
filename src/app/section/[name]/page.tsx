@@ -27,13 +27,13 @@ export default function SectionPage() {
   ========================= */
   const detailsMap: Record<string, string> = {
     "Data Science":
-      "Specialized in Python Machine Learning, predictive modeling, and feature engineering. Experienced in building and evaluating supervised/unsupervised algorithms (Regression, Random Forests, XGBoost) using Scikit-Learn.",
+      "Specialized in Python Machine Learning, deep learning pipelines, and predictive model engineering. Experienced in designing advanced diagnostic anomaly systems using vector embeddings and few-shot classification, as well as supervised regression models (Random Forests, Decision Trees) in Scikit-Learn. Capable of building scalable datasets pipelines, optimizing hyperparameter bounds, and visualizing feature importance metrics.",
     "Web Development":
-      "Built responsive and interactive web interfaces using HTML, CSS, JavaScript, React, and modern UI principles.",
+      "Experienced in building cinematic, highly interactive web applications using Next.js, React, and Vanilla CSS. Focused on clean semantic HTML5 structures, responsive grid architectures, dynamic state customizer menus, and advanced UI effects like canvas cursor smoke trails. Dedicated to implementing smooth navigation interfaces, page-route structures, and interactive frontend dashboards.",
     "Full Stack Development":
-      "Developed complete applications integrating frontend and backend with focus on scalability.",
+      "Capable of architecting end-to-end full-stack applications by integrating responsive React.js frontends with scalable Node.js/Express.js backends. Experienced in structuring database schemas using MongoDB, securing API endpoints with JSON Web Tokens (JWT), and designing user role access dashboards. Focused on building clean modular components, structured folder hierarchies, and robust CRUD data-management operations.",
     "Data Analysis":
-      "Specialized in transforming raw datasets into actionable insights using SQL databases, statistical tools, Excel, and interactive dashboards like Power BI/Tableau.",
+      "Specialized in transforming unstructured datasets into interactive business intelligence dashboards using Power BI and Tableau. Experienced in developing DAX formulas, modeling relational schemas, and cleaning raw CSV data. Capable of building multimodal forensics pipelines tracking density metrics (Hounsfield Units), geospatial distributions, and engagement analytics to drive data-driven decision making.",
   };
 
   /* =========================

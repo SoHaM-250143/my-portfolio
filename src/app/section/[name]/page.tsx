@@ -67,7 +67,7 @@ export default function SectionPage() {
         details: "Created a highly responsive portfolio mirroring Netflix's sleek dark theme and layout. Integrated standard video previews on hover, smooth layout transitions, custom canvas cursor smoke trails, and a contact form submission integration.",
         tech: ["Next.js", "React", "Framer Motion", "CSS Variables"],
         image: "/projects/portfolio.png",
-        github: "https://github.com/SoHaM-250143/netflix-style-portfolio",
+        github: "https://github.com/SoHaM-250143/my-portfolio",
       },
     ],
     "Full Stack Development": [

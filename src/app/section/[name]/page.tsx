@@ -62,7 +62,7 @@ export default function SectionPage() {
     ],
     "Web Development": [
       {
-        title: "Netflix Style Portfolio",
+        title: "My Portfolio",
         description: "Developed a cinematic portfolio using Next.js and animations.",
         details: "Created a highly responsive portfolio mirroring Netflix's sleek dark theme and layout. Integrated standard video previews on hover, smooth layout transitions, custom canvas cursor smoke trails, and a contact form submission integration.",
         tech: ["Next.js", "React", "Framer Motion", "CSS Variables"],

@@ -67,6 +67,22 @@ export default function SectionPage() {
         image: "/projects/cliniflow.png",
         github: "https://github.com/SoHaM-250143/CliniFlo-AI-Rare-Diesease-Detection-System-",
       },
+      {
+        title: "Weather Forecast Prediction",
+        description: "Developed a machine learning forecasting model to analyze meteorological parameters and predict weather conditions.",
+        details: "Trained predictive models to forecast temperature, humidity, wind speed, and precipitation based on historical weather records. Used Python, Pandas, and Scikit-Learn to clean weather datasets, conduct feature scaling, and evaluate classification/regression model limits.",
+        tech: ["Python", "Machine Learning", "Scikit-Learn", "Predictive Modeling", "Pandas", "Matplotlib"],
+        image: "/projects/weather-prediction.png",
+        github: "https://github.com/SoHaM-250143/Weather-Forecast-Prediction",
+      },
+      {
+        title: "Course Recommendation System",
+        description: "Built a content-based recommendation model to suggest relevant online courses using natural language processing.",
+        details: "Created a text-similarity recommendation engine to parse course catalogs and map user learning interests. Implemented Natural Language Processing (NLP) techniques like TF-IDF vectorization and Cosine Similarity to calculate matching scores between student query terms and course curriculum descriptions.",
+        tech: ["Python", "NLP", "TF-IDF Vectorization", "Cosine Similarity", "Text Processing", "Pandas"],
+        image: "/projects/course-recommendation.png",
+        github: "https://github.com/SoHaM-250143/course-recommendation-system",
+      },
     ],
     "Web Development": [
       {
@@ -77,6 +93,14 @@ export default function SectionPage() {
         image: "/projects/portfolio.png",
         github: "https://github.com/SoHaM-250143/my-portfolio",
       },
+      {
+        title: "Weather App",
+        description: "Developed a responsive weather forecasting web application consuming live meteorological API data.",
+        details: "Created a modular frontend weather interface displaying temperature profiles, humidity levels, and daily forecasts. Implemented geolocation lookups and consumed dynamic OpenWeatherMap API payloads, converting response outputs into smooth animated cards.",
+        tech: ["PHP", "JavaScript", "HTML5", "CSS3", "API Integration", "JSON Parsing"],
+        image: "/projects/weather-app.png",
+        github: "https://github.com/SoHaM-250143/Weather-app",
+      },
     ],
     "Full Stack Development": [
       {
@@ -86,6 +110,22 @@ export default function SectionPage() {
         tech: ["React.js", "Node.js", "Express.js", "MongoDB", "CSS Modules"],
         image: "/projects/student-result.png",
         github: "https://github.com/SoHaM-250143/Student-Result-Management-System",
+      },
+      {
+        title: "Home Rental Portal",
+        description: "Built a full-stack real-estate portal for property listings, reservation management, and booking scheduling.",
+        details: "Developed a complete residential listing platform featuring property image uploads, advanced search filters, and calendar availability mapping. Engineered user account sign-ups, dashboard roles, and property booking pipelines backed by a structured relational MySQL database.",
+        tech: ["PHP", "MySQL", "JavaScript", "Bootstrap", "CRUD Operations", "Database Design"],
+        image: "/projects/home-rental.png",
+        github: "https://github.com/SoHaM-250143/home-rental",
+      },
+      {
+        title: "Construction Field Management App",
+        description: "Developed a collaborative work site tracking portal for scheduling tasks, material inventories, and reports.",
+        details: "Created a collaborative field reporting app to assist construction managers in monitoring project task updates, contractor schedules, and material consumption rates. Features responsive layout boards, role-based logins, and interactive progress reporting charts.",
+        tech: ["JavaScript", "HTML5", "CSS3", "PHP", "MySQL", "Interactive Dashboards"],
+        image: "/projects/construction-field.png",
+        github: "https://github.com/SoHaM-250143/construction_field_app",
       },
     ],
     "Data Analysis": [

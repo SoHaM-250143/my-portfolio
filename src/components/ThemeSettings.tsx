@@ -84,7 +84,7 @@ export default function ThemeSettings() {
           
           <div className="settings-section">
             <div className="setting-row">
-              <span>Liquid Glow Effect</span>
+              <span>Smoke Cursor Effect</span>
               <label className="switch">
                 <input 
                   type="checkbox" 
@@ -100,7 +100,7 @@ export default function ThemeSettings() {
             <div className="settings-section">
               <div className="setting-column" style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                 <div className="setting-row">
-                  <span>Glow Intensity</span>
+                  <span>Smoke Intensity</span>
                   <span style={{ color: "var(--accent-color)", fontWeight: "bold" }}>{smokeDensity}</span>
                 </div>
                 <input 
@@ -116,7 +116,7 @@ export default function ThemeSettings() {
           )}
 
           <div className="settings-section">
-            <h4>Glow Color Presets</h4>
+            <h4>Smoke Trail Color</h4>
             <div className="color-presets" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "8px" }}>
               {PRESET_COLORS.map((color) => (
                 <button

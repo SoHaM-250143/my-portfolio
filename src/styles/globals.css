@@ -480,25 +480,34 @@ p {
 }
 
 /* =========================
-   LIQUID GLOW CURSOR
+   NEON SMOKE CURSOR
 ========================= */
 
-.liquid-glow-blob {
+.neon-smoke {
   position: fixed;
-  top: 0;
-  left: 0;
+  width: 70px;
+  height: 70px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 9999;
   background: radial-gradient(
     circle,
-    rgba(var(--smoke-color-rgb), 0.15) 0%,
-    rgba(var(--smoke-color-rgb), 0.04) 50%,
-    transparent 70%
+    rgba(var(--smoke-color-rgb), 0.35) 0%,
+    rgba(var(--smoke-color-rgb), 0.15) 40%,
+    transparent 80%
   );
-  filter: blur(40px);
-  transform: translate3d(-50%, -50%, 0);
-  will-change: transform;
-  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease;
+  filter: blur(10px);
+  animation: smokeFloat 1.6s ease-out forwards;
+}
+
+@keyframes smokeFloat {
+  from {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -110%) scale(2);
+  }
 }
 
 /* =========================

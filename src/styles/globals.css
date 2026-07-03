@@ -715,6 +715,8 @@ p {
     inset 0 0 15px rgba(var(--accent-color-rgb), 0.05);
   backdrop-filter: blur(10px);
   animation: slideUp 0.3s ease-out;
+  z-index: 99999 !important;
+  box-sizing: border-box !important;
 }
 
 @keyframes slideUp {
@@ -1437,6 +1439,8 @@ p {
   gap: 20px;
   animation: panelSlideIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 99999 !important;
+  box-sizing: border-box !important;
 }
 
 @keyframes panelSlideIn {
@@ -1597,9 +1601,11 @@ input:checked + .slider::before {
     margin-top: 0;
     transform: none;
     background: rgba(10, 10, 10, 0.98);
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--accent-color) !important;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95), 0 0 25px rgba(var(--accent-color-rgb), 0.3);
     animation: panelSlideInMobile 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 99999 !important;
+    box-sizing: border-box !important;
   }
 }
 

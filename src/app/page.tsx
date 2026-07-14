@@ -9,6 +9,29 @@ import ViewCounter from "@/components/ViewCounter";
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
 
+  const socials = [
+    {
+      name: "GitHub",
+      url: "https://github.com/SoHaM-250143",
+      icon: "/icons/github.svg",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/253019-soham-mhatre/",
+      icon: "/icons/linkedin.svg",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/_.sohammm.__?igsh=czhyZHUwY3RmcnV4",
+      icon: "/icons/instagram.svg",
+    },
+    {
+      name: "Twitter",
+      url: "https://x.com/SohamMh85077807",
+      icon: "/icons/twitter.svg",
+    },
+  ];
+
   const educationData = [
     {
       degree: "Master of Computer Application (MCA)",
@@ -260,6 +283,42 @@ export default function HomePage() {
 
       <footer className="footer-section">
         <p className="footer-credit" suppressHydrationWarning>© {new Date().getFullYear()} Soham Mhatre. All rights reserved.</p>
+        
+        {/* Social Icons for Mobile */}
+        <div className="footer-social-links">
+          {socials.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              title={social.name}
+            >
+              <span
+                className="footer-social-icon"
+                style={{
+                  WebkitMaskImage: `url(${social.icon})`,
+                  maskImage: `url(${social.icon})`,
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain"
+                }}
+              />
+            </a>
+          ))}
+        </div>
+
+        {/* Email Link for Mobile */}
+        <div className="footer-email">
+          <a href="mailto:mhatresoham2501@gmail.com" className="footer-email-link">
+            mhatresoham2501@gmail.com
+          </a>
+        </div>
+
         <div className="footer-views">
           <ViewCounter />
         </div>

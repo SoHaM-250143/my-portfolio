@@ -42,6 +42,16 @@ export default function ThemeSettings() {
     localStorage.setItem("theme-mode", "dark");
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const handleSmokeToggle = (enabled: boolean) => {
     setSmokeEnabled(enabled);
     localStorage.setItem("smoke-enabled", String(enabled));

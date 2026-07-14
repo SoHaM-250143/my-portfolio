@@ -16,8 +16,8 @@ export default function ViewCounter() {
         throw new Error("Counter API network response was not ok");
       })
       .then((data) => {
-        if (data && typeof data.value === "number") {
-          setViews(data.value);
+        if (data && typeof data.count === "number") {
+          setViews(1420 + data.count);
         } else {
           setViews(1420); // Fallback baseline
         }

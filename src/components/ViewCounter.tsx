@@ -8,11 +8,17 @@ export default function ViewCounter() {
   useEffect(() => {
     fetch("/api/views")
       .then((res) => res.json())
-      .then((data) => setViews(data.views))
+      .then((data) => {
+        if (data && typeof data.views === "number") {
+          setViews(data.views);
+        } else {
+          setViews(null);
+        }
+      })
       .catch(() => setViews(null));
   }, []);
 
-  if (views === null) return null;
+  if (views === null || typeof views !== "number") return null;
 
   return (
     <span className="view-counter-text">

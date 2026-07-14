@@ -259,7 +259,7 @@ export default function HomePage() {
       </section>
 
       <footer className="footer-section">
-        <p className="footer-credit">© {new Date().getFullYear()} Soham Mhatre. All rights reserved.</p>
+        <p className="footer-credit" suppressHydrationWarning>© {new Date().getFullYear()} Soham Mhatre. All rights reserved.</p>
         <div className="footer-views">
           <ViewCounter />
         </div>

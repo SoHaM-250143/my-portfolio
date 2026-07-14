@@ -62,12 +62,17 @@ export default function GithubGrid() {
 
   const formatDate = (dateStr: string) => {
     if (!dateStr || dateStr.startsWith("Day")) return dateStr;
-    const d = new Date(dateStr);
-    return d.toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    });
+    try {
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) return dateStr;
+      return d.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+    } catch (e) {
+      return dateStr;
+    }
   };
 
   // Align days into 5 columns of 7 rows (Sunday to Saturday)
@@ -106,17 +111,24 @@ export default function GithubGrid() {
 
     monthLabels = cols.map((col, idx) => {
       if (col.length === 0) return "";
-      const dateObj = new Date(col[0].date);
-      const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
-      if (idx === 0) return monthName;
+      try {
+        const dateObj = new Date(col[0].date);
+        if (isNaN(dateObj.getTime())) return "";
+        const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
+        if (idx === 0) return monthName;
 
-      const prevCol = cols[idx - 1];
-      if (prevCol && prevCol.length > 0) {
-        const prevDateObj = new Date(prevCol[0].date);
-        const prevMonthName = prevDateObj.toLocaleDateString("en-US", { month: "short" });
-        if (monthName !== prevMonthName) {
-          return monthName;
+        const prevCol = cols[idx - 1];
+        if (prevCol && prevCol.length > 0) {
+          const prevDateObj = new Date(prevCol[0].date);
+          if (!isNaN(prevDateObj.getTime())) {
+            const prevMonthName = prevDateObj.toLocaleDateString("en-US", { month: "short" });
+            if (monthName !== prevMonthName) {
+              return monthName;
+            }
+          }
         }
+      } catch (e) {
+        console.error("Error formatting month label date", e);
       }
       return "";
     });

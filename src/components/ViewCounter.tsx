@@ -15,8 +15,8 @@ export default function ViewCounter() {
   if (views === null) return null;
 
   return (
-    <div style={{ fontSize: "14px", opacity: 0.8 }}>
+    <span className="view-counter-text">
       👁️ {views.toLocaleString()} views
-    </div>
+    </span>
   );
 }

@@ -1920,3 +1920,47 @@ input:checked + .slider::before {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.footer-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.footer-credit {
+  margin: 0;
+}
+
+.footer-views {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.3);
+}
+
+.view-counter-text {
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}

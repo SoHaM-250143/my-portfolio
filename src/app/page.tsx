@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 import GithubGrid from "@/components/GithubGrid";
+import ViewCounter from "@/components/ViewCounter";
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
@@ -256,6 +257,13 @@ export default function HomePage() {
           </button>
         </form>
       </section>
+
+      <footer className="footer-section">
+        <p className="footer-credit">© {new Date().getFullYear()} Soham Mhatre. All rights reserved.</p>
+        <div className="footer-views">
+          <ViewCounter />
+        </div>
+      </footer>
     </>
   );
 }

@@ -314,8 +314,8 @@ export default function HomePage() {
 
         {/* Email Link for Mobile */}
         <div className="footer-email">
-          <a href="mailto:mhatresoham2501@gmail.com" className="footer-email-link">
-            mhatresoham2501@gmail.com
+          <a href="mailto:work.sohamm@gmail.com" className="footer-email-link">
+            work.sohamm@gmail.com
           </a>
         </div>
 

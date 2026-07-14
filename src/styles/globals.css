@@ -1931,25 +1931,31 @@ input:checked + .slider::before {
   margin: 0 auto;
   padding: 40px 60px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: inherit;
   color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
+  text-align: center;
 }
 
 .footer-credit {
   margin: 0;
+  text-align: center;
 }
 
 .footer-views {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   color: var(--accent-color);
   font-weight: 500;
   text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.3);
+  text-align: center;
 }
 
 .view-counter-text {
@@ -1958,9 +1964,6 @@ input:checked + .slider::before {
 
 @media (max-width: 768px) {
   .footer-section {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
     padding: 30px 20px;
   }
 }

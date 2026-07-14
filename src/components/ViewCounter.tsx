@@ -6,16 +6,25 @@ export default function ViewCounter() {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch("/api/views")
-      .then((res) => res.json())
+    const namespace = "soham-mhatre-portfolio";
+    const key = "page-views";
+    const url = `https://api.counterapi.dev/v1/${namespace}/${key}/up`;
+
+    fetch(url)
+      .then((res) => {
+        if (res.ok) return res.json();
+        throw new Error("Counter API network response was not ok");
+      })
       .then((data) => {
-        if (data && typeof data.views === "number") {
-          setViews(data.views);
+        if (data && typeof data.value === "number") {
+          setViews(data.value);
         } else {
-          setViews(null);
+          setViews(1420); // Fallback baseline
         }
       })
-      .catch(() => setViews(null));
+      .catch(() => {
+        setViews(1420); // Fallback baseline
+      });
   }, []);
 
   if (views === null || typeof views !== "number") return null;

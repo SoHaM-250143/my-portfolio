@@ -6,6 +6,7 @@ interface ContributionDay {
   date: string;
   level: number;
   countText?: string;
+  isPlaceholder?: boolean;
 }
 
 export default function GithubGrid() {
@@ -73,49 +74,56 @@ export default function GithubGrid() {
   let alignedDays: ContributionDay[] = [];
   let monthLabels: string[] = [];
 
-  if (!loading && days.length > 0) {
-    // Find index of the most recent Sunday to align weeks
-    let lastSundayIndex = days.length - 1;
-    while (lastSundayIndex >= 0) {
-      const dayOfWeek = new Date(days[lastSundayIndex].date).getDay();
-      if (dayOfWeek === 0) {
-        break;
-      }
-      lastSundayIndex--;
-    }
+  if (days.length > 0) {
+    const today = new Date();
+    const todayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+    const emptyDaysCount = 6 - todayOfWeek; // Days remaining in current week (Wed to Sat)
+    const activeDaysCount = 35 - emptyDaysCount; // Active days required to make exactly 35 elements
 
-    if (lastSundayIndex >= 0) {
-      // Start 4 weeks before the last Sunday index to get 5 weeks of columns
-      const startIndex = Math.max(0, lastSundayIndex - 28);
-      alignedDays = days.slice(startIndex);
+    // Get the last activeDaysCount days from the fetched list
+    const activeDaysSlice = days.slice(-activeDaysCount);
+    alignedDays = [...activeDaysSlice];
 
-      // Group days into columns of 7 to calculate month labels
-      const cols: ContributionDay[][] = [];
-      for (let i = 0; i < alignedDays.length; i += 7) {
-        cols.push(alignedDays.slice(i, i + 7));
-      }
+    // Append placeholder days to complete the remaining slots of the final column
+    for (let i = 1; i <= emptyDaysCount; i++) {
+      const futureDate = new Date(today);
+      futureDate.setDate(today.getDate() + i);
+      const dateString = futureDate.toISOString().split("T")[0];
 
-      monthLabels = cols.map((col, idx) => {
-        if (col.length === 0) return "";
-        const dateObj = new Date(col[0].date);
-        const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
-        if (idx === 0) return monthName;
-
-        const prevCol = cols[idx - 1];
-        if (prevCol && prevCol.length > 0) {
-          const prevDateObj = new Date(prevCol[0].date);
-          const prevMonthName = prevDateObj.toLocaleDateString("en-US", { month: "short" });
-          if (monthName !== prevMonthName) {
-            return monthName;
-          }
-        }
-        return "";
+      alignedDays.push({
+        date: dateString,
+        level: 0,
+        countText: "No contributions",
+        isPlaceholder: true,
       });
     }
+
+    // Group alignedDays into columns of 7 to calculate month labels
+    const cols: ContributionDay[][] = [];
+    for (let i = 0; i < alignedDays.length; i += 7) {
+      cols.push(alignedDays.slice(i, i + 7));
+    }
+
+    monthLabels = cols.map((col, idx) => {
+      if (col.length === 0) return "";
+      const dateObj = new Date(col[0].date);
+      const monthName = dateObj.toLocaleDateString("en-US", { month: "short" });
+      if (idx === 0) return monthName;
+
+      const prevCol = cols[idx - 1];
+      if (prevCol && prevCol.length > 0) {
+        const prevDateObj = new Date(prevCol[0].date);
+        const prevMonthName = prevDateObj.toLocaleDateString("en-US", { month: "short" });
+        if (monthName !== prevMonthName) {
+          return monthName;
+        }
+      }
+      return "";
+    });
   }
 
   // Fallback for loading state (5 weeks * 7 days = 35 days)
-  if (loading || alignedDays.length === 0) {
+  if (alignedDays.length === 0) {
     alignedDays = Array.from({ length: 35 }, (_, i) => ({
       date: `Day ${i + 1}`,
       level: 0,
@@ -150,6 +158,19 @@ export default function GithubGrid() {
         {/* 7x5 Grid Cells */}
         <div className="github-grid-cells">
           {alignedDays.map((day, i) => {
+            if (day.isPlaceholder) {
+              return (
+                <div
+                  key={i}
+                  className="github-day-cell placeholder"
+                  style={{
+                    opacity: 0,
+                    pointerEvents: "none",
+                  }}
+                />
+              );
+            }
+
             let opacity = 0.08;
             if (day.level === 1) opacity = 0.35;
             if (day.level === 2) opacity = 0.55;

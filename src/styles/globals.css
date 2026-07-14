@@ -934,7 +934,9 @@ p {
   }
 
   .education-section,
-  .certifications-section {
+  .skills-section,
+  .certifications-section,
+  .github-section {
     padding: 40px 20px 0;
   }
 
@@ -948,14 +950,14 @@ p {
 
   /* Header mobile adjustment */
   .header {
-    padding: 15px 6px 15px 8px;
-    grid-template-columns: 32px 1fr 115px;
-    gap: 6px;
+    padding: 12px;
+    grid-template-columns: 36px 1fr auto;
+    gap: 10px;
   }
 
   .header-left {
     justify-content: flex-start;
-    margin-left: -6px;
+    margin-left: 0;
   }
 
   .header-middle {
@@ -977,6 +979,13 @@ p {
   .header-logo {
     width: 22px !important;
     height: 22px !important;
+  }
+
+  .theme-settings-btn {
+    margin-top: 0 !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
   }
 
   .name {
@@ -1259,33 +1268,6 @@ p {
 
 @media (max-width: 768px) {
   .vertical-email-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    left: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-    z-index: 100;
-  }
-  .vertical-email-link {
-    writing-mode: horizontal-tb;
-    text-orientation: mixed;
-    font-size: 13px;
-    padding: 8px 14px;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(var(--accent-color-rgb), 0.3);
-    border-radius: 20px;
-    backdrop-filter: blur(8px);
-    color: var(--accent-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(var(--accent-color-rgb), 0.1);
-  }
-  .vertical-email-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent-color);
-  }
-  .vertical-email-line {
     display: none !important;
   }
 }
@@ -1365,32 +1347,6 @@ p {
 
 @media (max-width: 768px) {
   .social-sidebar-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-    z-index: 100;
-  }
-  .social-sidebar-links {
-    flex-direction: row;
-    gap: 10px;
-  }
-  .social-sidebar-link {
-    width: 36px;
-    height: 36px;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(var(--accent-color-rgb), 0.3);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  }
-  .social-sidebar-link:hover {
-    transform: translateY(-2px) scale(1.05);
-  }
-  .social-sidebar-line {
     display: none !important;
   }
 }

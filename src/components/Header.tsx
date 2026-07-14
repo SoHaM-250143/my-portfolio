@@ -57,7 +57,7 @@ export default function Header() {
       {/* RIGHT: DOWNLOAD RESUME */}
       <div className="header-right">
         {/* Download Resume */}
-        <a href="/my_resume.pdf" download className="contact-btn">
+        <a href="/Soham_Mhatre_2026.pdf" download="Soham_Mhatre_2026.pdf" className="contact-btn">
           Download Resume
         </a>
       </div>

@@ -5,9 +5,11 @@ import { useState, useEffect } from "react";
 import ThemeSettings from "./ThemeSettings";
 import { LogoSVG } from "./LogoLoader";
 import Magnetic from "./Magnetic";
+import TextScramble from "./TextScramble";
 
 export default function Header() {
   const router = useRouter();
+  const [scrambleKey, setScrambleKey] = useState(0);
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -46,12 +48,13 @@ export default function Header() {
         className="header-middle" 
         onClick={() => {
           window.dispatchEvent(new Event("trigger-logo-reload-anim"));
+          setScrambleKey(prev => prev + 1);
         }}
         style={{ cursor: "pointer" }}
       >
         <LogoSVG className="header-logo" />
         <h1 className="name-centered">
-          Soham Mhatre
+          <TextScramble key={scrambleKey} text="Soham Mhatre" />
         </h1>
       </div>
 

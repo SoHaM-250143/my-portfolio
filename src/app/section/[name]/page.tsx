@@ -4,7 +4,6 @@ import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
-import TextScramble from "@/components/TextScramble";
 
 export default function SectionPage() {
   const params = useParams();
@@ -213,7 +212,7 @@ export default function SectionPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1><TextScramble text={sectionName} /></h1>
+        <h1>{sectionName}</h1>
 
         {/* =========================
            BUTTONS

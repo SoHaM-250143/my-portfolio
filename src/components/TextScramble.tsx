@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 interface TextScrambleProps {
   text: string;
+  delay?: number;
 }
 
-export default function TextScramble({ text }: TextScrambleProps) {
+export default function TextScramble({ text, delay = 0 }: TextScrambleProps) {
   const characters = text.split("");
 
   const containerVariants = {
@@ -15,6 +16,7 @@ export default function TextScramble({ text }: TextScrambleProps) {
       opacity: 1,
       transition: {
         staggerChildren: 0.04,
+        delayChildren: delay,
       },
     },
   };

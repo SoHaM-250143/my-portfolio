@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import ThemeSettings from "./ThemeSettings";
 import { LogoSVG } from "./LogoLoader";
@@ -9,7 +9,10 @@ import TextScramble from "./TextScramble";
 
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const [scrambleKey, setScrambleKey] = useState(0);
+
+  const isMainPage = pathname === "/";
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -54,7 +57,11 @@ export default function Header() {
       >
         <LogoSVG className="header-logo" />
         <h1 className="name-centered">
-          <TextScramble key={scrambleKey} text="Soham Mhatre" />
+          {isMainPage ? (
+            <TextScramble key={scrambleKey} text="Soham Mhatre" delay={2.5} />
+          ) : (
+            "Soham Mhatre"
+          )}
         </h1>
       </div>
 

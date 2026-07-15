@@ -1,52 +1,58 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface TextScrambleProps {
   text: string;
-  duration?: number;
-  speed?: number;
 }
 
-const chars = "!<>-_\\/[]{}—=+*^?#________";
+export default function TextScramble({ text }: TextScrambleProps) {
+  const characters = text.split("");
 
-export default function TextScramble({ text, duration = 1.0, speed = 30 }: TextScrambleProps) {
-  const [displayText, setDisplayText] = useState(text);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.04,
+      },
+    },
+  };
 
-  useEffect(() => {
-    let frame = 0;
-    const totalFrames = Math.floor((duration * 1000) / speed);
-    const textLength = text.length;
+  const charVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 12,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 150,
+        damping: 12,
+      },
+    },
+  };
 
-    const interval = setInterval(() => {
-      frame++;
-      
-      const scrambled = text
-        .split("")
-        .map((char, index) => {
-          if (char === " ") return " ";
-          
-          const charProgress = index / textLength;
-          const overallProgress = frame / totalFrames;
-
-          if (overallProgress > charProgress) {
-            return char;
-          }
-          
-          return chars[Math.floor(Math.random() * chars.length)];
-        })
-        .join("");
-
-      setDisplayText(scrambled);
-
-      if (frame >= totalFrames) {
-        setDisplayText(text);
-        clearInterval(interval);
-      }
-    }, speed);
-
-    return () => clearInterval(interval);
-  }, [text, duration, speed]);
-
-  return <span>{displayText}</span>;
+  return (
+    <motion.span
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      style={{ display: "inline-flex", flexWrap: "wrap", whiteSpace: "pre-wrap" }}
+    >
+      {characters.map((char, index) => (
+        <motion.span
+          key={index}
+          variants={charVariants}
+          style={{ display: "inline-block" }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
 }

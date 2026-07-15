@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Magnetic from "./Magnetic";
 
 const PRESET_COLORS = [
   { name: "Cyan", rgb: "0, 255, 255", hex: "#00ffff" },
@@ -79,13 +80,15 @@ export default function ThemeSettings() {
   return (
     <div className="theme-settings-container">
       {/* Floating Settings Button */}
-      <button 
-        className="theme-settings-btn" 
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Theme settings"
-      >
-        ⚙️
-      </button>
+      <Magnetic>
+        <button 
+          className="theme-settings-btn" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Theme settings"
+        >
+          ⚙️
+        </button>
+      </Magnetic>
 
       {/* Settings Panel */}
       {isOpen && (

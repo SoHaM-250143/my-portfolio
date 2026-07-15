@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 import GithubGrid from "@/components/GithubGrid";
 import ViewCounter from "@/components/ViewCounter";
+import Magnetic from "@/components/Magnetic";
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
@@ -275,9 +276,11 @@ export default function HomePage() {
             required
           ></textarea>
 
-          <button type="submit" className="btn">
-            Send Message
-          </button>
+          <Magnetic>
+            <button type="submit" className="btn">
+              Send Message
+            </button>
+          </Magnetic>
         </form>
       </section>
 

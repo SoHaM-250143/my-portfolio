@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import ThemeSettings from "./ThemeSettings";
 import { LogoSVG } from "./LogoLoader";
+import Magnetic from "./Magnetic";
 
 export default function Header() {
   const router = useRouter();
@@ -57,9 +58,11 @@ export default function Header() {
       {/* RIGHT: DOWNLOAD RESUME */}
       <div className="header-right">
         {/* Download Resume */}
-        <a href="/Soham_Mhatre_2026.pdf" download="Soham_Mhatre_2026.pdf" className="contact-btn">
-          Download Resume
-        </a>
+        <Magnetic>
+          <a href="/Soham_Mhatre_2026.pdf" download="Soham_Mhatre_2026.pdf" className="contact-btn">
+            Download Resume
+          </a>
+        </Magnetic>
       </div>
     </header>
   );

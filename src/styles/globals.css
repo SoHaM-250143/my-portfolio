@@ -1232,7 +1232,7 @@ p {
   align-items: center;
   gap: 20px;
   z-index: 100;
-  animation: sidebarFloat 6s ease-in-out infinite 1.5s;
+  animation: sidebarFloat 8s ease-in-out infinite 2s;
 }
 
 .vertical-email-link {
@@ -1289,7 +1289,7 @@ p {
   align-items: center;
   gap: 20px;
   z-index: 100;
-  animation: sidebarFloat 6s ease-in-out infinite;
+  animation: sidebarFloat 8s ease-in-out infinite;
 }
 
 .social-sidebar-links {
@@ -1995,6 +1995,6 @@ input:checked + .slider::before {
 
 @keyframes sidebarFloat {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-16px); }
   100% { transform: translateY(0px); }
 }

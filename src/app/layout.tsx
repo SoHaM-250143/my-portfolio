@@ -5,6 +5,7 @@ import NeonSmokeCursor from "@/components/NeonSmokeCursor";
 import SocialSidebar from "@/components/SocialSidebar";
 import VerticalEmail from "@/components/VerticalEmail";
 import LogoLoader from "@/components/LogoLoader";
+import TwinklingStars from "@/components/TwinklingStars";
 
 export const metadata: Metadata = {
   title: "Soham Mhatre | Portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         <LogoLoader />
         <NeonSmokeCursor />
+        <TwinklingStars />
         <SocialSidebar />
         <VerticalEmail />
         {children}

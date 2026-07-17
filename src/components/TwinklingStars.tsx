@@ -1,5 +1,6 @@
 "use client";
 
+// Twinkling starfield background animation for deep space theme
 import { useEffect, useState } from "react";
 
 interface Star {

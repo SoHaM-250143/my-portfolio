@@ -276,8 +276,8 @@ export default function HomePage() {
             required
           ></textarea>
 
-          <Magnetic>
-            <button type="submit" className="btn">
+          <Magnetic style={{ width: "100%", display: "block" }}>
+            <button type="submit" className="btn" style={{ width: "100%" }}>
               Send Message
             </button>
           </Magnetic>

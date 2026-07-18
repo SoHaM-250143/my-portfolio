@@ -3,7 +3,13 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function Magnetic({ children }: { children: React.ReactElement }) {
+interface MagneticProps {
+  children: React.ReactElement;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export default function Magnetic({ children, className, style }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [enabled, setEnabled] = useState(false);
@@ -63,9 +69,10 @@ export default function Magnetic({ children }: { children: React.ReactElement })
   return (
     <motion.div
       ref={ref}
+      className={className}
       animate={enabled ? { x: position.x, y: position.y } : { x: 0, y: 0 }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      style={{ display: "inline-block" }}
+      style={{ display: "inline-block", ...style }}
     >
       {children}
     </motion.div>

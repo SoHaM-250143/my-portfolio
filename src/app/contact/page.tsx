@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import { motion } from "framer-motion";
+import Magnetic from "@/components/Magnetic";
 
 export default function ContactPage() {
   return (
@@ -52,9 +53,11 @@ export default function ContactPage() {
             required
           ></textarea>
 
-          <button type="submit" className="btn">
-            Send Message
-          </button>
+          <Magnetic style={{ width: "100%", display: "block" }}>
+            <button type="submit" className="btn" style={{ width: "100%" }}>
+              Send Message
+            </button>
+          </Magnetic>
         </form>
       </motion.div>
     </>

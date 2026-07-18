@@ -222,6 +222,14 @@ p {
   color: var(--bg-color);
 }
 
+.desktop-resume {
+  display: inline;
+}
+
+.mobile-resume {
+  display: none;
+}
+
 /* About dropdown wrapper */
 .about-wrapper {
   position: relative;
@@ -994,14 +1002,15 @@ p {
 
   /* Header mobile adjustment */
   .header {
-    padding: 12px;
-    grid-template-columns: 36px 1fr auto;
-    gap: 10px;
+    padding: 10px 16px;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
   }
 
   .header-left {
     justify-content: flex-start;
     margin-left: 0;
+    min-width: 36px;
   }
 
   .header-middle {
@@ -1012,6 +1021,14 @@ p {
   .header-right {
     justify-content: flex-end;
     gap: 8px;
+  }
+
+  .desktop-resume {
+    display: none;
+  }
+
+  .mobile-resume {
+    display: inline;
   }
 
   .name-centered {

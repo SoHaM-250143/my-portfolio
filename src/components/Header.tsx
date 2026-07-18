@@ -70,7 +70,8 @@ export default function Header() {
         {/* Download Resume */}
         <Magnetic>
           <a href="/Soham_Mhatre_2026.pdf" download="Soham_Mhatre_2026.pdf" className="contact-btn">
-            Download Resume
+            <span className="desktop-resume">Download Resume</span>
+            <span className="mobile-resume">Resume</span>
           </a>
         </Magnetic>
       </div>

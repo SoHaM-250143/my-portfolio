@@ -6,8 +6,24 @@ import { motion } from "framer-motion";
 export default function Magnetic({ children }: { children: React.ReactElement }) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    // Enable magnetic effect only on screens wider than 768px with a hoverable pointer
+    const checkDevice = () => {
+      const isDesktop = window.innerWidth > 768;
+      const hasHover = window.matchMedia("(hover: hover)").matches;
+      setEnabled(isDesktop && hasHover);
+    };
+
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!ref.current) return;
       const { clientX, clientY } = e;
@@ -42,12 +58,12 @@ export default function Magnetic({ children }: { children: React.ReactElement })
         element.removeEventListener("mouseleave", handleMouseLeave);
       }
     };
-  }, []);
+  }, [enabled]);
 
   return (
     <motion.div
       ref={ref}
-      animate={{ x: position.x, y: position.y }}
+      animate={enabled ? { x: position.x, y: position.y } : { x: 0, y: 0 }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       style={{ display: "inline-block" }}
     >

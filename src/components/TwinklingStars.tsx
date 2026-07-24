@@ -53,112 +53,113 @@ export default function TwinklingStars() {
   const [asteroids, setAsteroids] = useState<Asteroid[]>([]);
 
   useEffect(() => {
-    // 1. Generate 75 perfectly round, multi-sized stars
-    const generatedStars: Star[] = Array.from({ length: 75 }).map((_, i) => {
-      // Different size tiers: 2px to 9px
+    // 1. Generate 80 perfectly round, multi-sized moving stars
+    const generatedStars: Star[] = Array.from({ length: 80 }).map((_, i) => {
       const sizeRandom = Math.random();
       let size: number;
       let isLarge = false;
 
-      if (sizeRandom > 0.90) {
-        size = Math.random() * 3 + 6; // 6px - 9px (large glowing stars)
+      if (sizeRandom > 0.88) {
+        size = Math.random() * 3 + 6.5; // 6.5px - 9.5px (large glowing stars)
         isLarge = true;
-      } else if (sizeRandom > 0.65) {
+      } else if (sizeRandom > 0.60) {
         size = Math.random() * 2 + 4; // 4px - 6px (medium stars)
       } else {
         size = Math.random() * 1.5 + 2; // 2px - 3.5px (small background stars)
       }
 
-      const speedFactor = (size / 9) * 0.8 + 0.2; // 3D depth parallax: larger stars move slightly faster
-      const isAccent = i % 4 === 0;
+      // Parallax speed: larger stars move faster
+      const speedFactor = (size / 9.5) * 0.9 + 0.3;
+      const isAccent = i % 3 === 0;
 
       return {
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
         size,
-        duration: Math.random() * 4 + 3, // Twinkle speed 3s-7s
-        delay: Math.random() * 5,
-        driftX: (Math.random() * 40 + 20) * speedFactor * (Math.random() > 0.5 ? 1 : -1),
-        driftY: (Math.random() * 40 + 20) * speedFactor * (Math.random() > 0.5 ? 1 : -1),
-        driftDuration: Math.random() * 80 + 80, // Slow space drift: 80s to 160s
+        duration: Math.random() * 3 + 2.5, // Twinkle speed 2.5s - 5.5s
+        delay: Math.random() * 4,
+        // Noticeable drift vectors and 12s - 28s duration for clearly visible movement!
+        driftX: (Math.random() * 140 + 70) * speedFactor * (Math.random() > 0.5 ? 1 : -1),
+        driftY: (Math.random() * 140 + 70) * speedFactor * (Math.random() > 0.5 ? 1 : -1),
+        driftDuration: Math.random() * 16 + 12,
         isAccent,
         isLarge,
       };
     });
     setStars(generatedStars);
 
-    // 2. Generate moving planets floating in space
+    // 2. Generate moving planets traveling across space
     const generatedPlanets: Planet[] = [
       {
         id: 1,
         type: "ringed",
-        x: 12,
-        y: 18,
-        size: 70,
-        driftX: 80,
-        driftY: -40,
-        duration: 180,
+        x: 10,
+        y: 15,
+        size: 85,
+        driftX: 280,
+        driftY: -110,
+        duration: 32, // Clearly visible 32s motion cycle
       },
       {
         id: 2,
         type: "orb",
-        x: 82,
-        y: 65,
-        size: 50,
-        driftX: -60,
-        driftY: -50,
-        duration: 210,
+        x: 75,
+        y: 60,
+        size: 65,
+        driftX: -260,
+        driftY: -150,
+        duration: 38, // Clearly visible 38s motion cycle
       },
       {
         id: 3,
         type: "moon",
-        x: 70,
-        y: 15,
-        size: 35,
-        driftX: -45,
-        driftY: 35,
-        duration: 190,
+        x: 65,
+        y: 12,
+        size: 45,
+        driftX: -200,
+        driftY: 160,
+        duration: 28, // Clearly visible 28s motion cycle
       },
     ];
     setPlanets(generatedPlanets);
 
-    // 3. Generate asteroids floating and tumbling slowly
+    // 3. Generate asteroids traveling and spinning across space
     const generatedAsteroids: Asteroid[] = [
       {
         id: 1,
-        x: 25,
-        y: 75,
-        size: 28,
-        driftX: 110,
-        driftY: -70,
-        duration: 130,
-        rotateDuration: 45,
+        x: 15,
+        y: 70,
+        size: 34,
+        driftX: 350,
+        driftY: -240,
+        duration: 22,
+        rotateDuration: 10,
         delay: 0,
         path: ASTEROID_PATHS[0],
       },
       {
         id: 2,
-        x: 78,
-        y: 35,
-        size: 22,
-        driftX: -90,
-        driftY: 80,
-        duration: 150,
-        rotateDuration: 38,
-        delay: 3,
+        x: 80,
+        y: 25,
+        size: 26,
+        driftX: -320,
+        driftY: 260,
+        duration: 26,
+        rotateDuration: 12,
+        delay: 2,
         path: ASTEROID_PATHS[1],
       },
       {
         id: 3,
-        x: 45,
-        y: 10,
-        size: 18,
-        driftX: 70,
-        driftY: 90,
-        duration: 140,
-        rotateDuration: 50,
-        delay: 6,
+        x: 40,
+        y: 8,
+        size: 22,
+        driftX: 280,
+        driftY: 300,
+        duration: 20,
+        rotateDuration: 8,
+        delay: 4,
         path: ASTEROID_PATHS[2],
       },
     ];
@@ -167,7 +168,7 @@ export default function TwinklingStars() {
 
   return (
     <div className="starfield-container">
-      {/* PERFECT CIRCLE STARS */}
+      {/* MOVING ROUND STARS */}
       {stars.map((star) => (
         <div
           key={`star-${star.id}`}
@@ -180,12 +181,12 @@ export default function TwinklingStars() {
             height: `${star.size}px`,
             borderRadius: "50%",
             background: star.isAccent
-              ? `radial-gradient(circle at center, #ffffff 0%, var(--accent-color) 60%, transparent 100%)`
-              : `radial-gradient(circle at center, #ffffff 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.1) 85%, transparent 100%)`,
+              ? `radial-gradient(circle at center, #ffffff 0%, var(--accent-color) 65%, transparent 100%)`
+              : `radial-gradient(circle at center, #ffffff 0%, rgba(255, 255, 255, 0.85) 45%, rgba(255, 255, 255, 0.15) 80%, transparent 100%)`,
             boxShadow: star.isAccent
-              ? `0 0 ${star.size * 2}px var(--accent-color)`
-              : `0 0 ${star.size * 1.5}px rgba(255, 255, 255, 0.9)`,
-            animation: `starTwinkle ${star.duration}s ease-in-out infinite alternate, spaceFloat ${star.driftDuration}s ease-in-out infinite alternate`,
+              ? `0 0 ${star.size * 2.5}px var(--accent-color)`
+              : `0 0 ${star.size * 1.8}px rgba(255, 255, 255, 0.9)`,
+            animation: `starTwinkle ${star.duration}s ease-in-out infinite alternate, spaceFloat ${star.driftDuration}s linear infinite alternate`,
             animationDelay: `${star.delay}s`,
             opacity: 0,
             "--drift-x": `${star.driftX}px`,
@@ -206,7 +207,7 @@ export default function TwinklingStars() {
             top: `${planet.y}%`,
             width: `${planet.size}px`,
             height: `${planet.size}px`,
-            animation: `spaceFloat ${planet.duration}s ease-in-out infinite alternate`,
+            animation: `spaceFloat ${planet.duration}s linear infinite alternate`,
             "--drift-x": `${planet.driftX}px`,
             "--drift-y": `${planet.driftY}px`,
             willChange: "transform",
@@ -223,9 +224,9 @@ export default function TwinklingStars() {
                     <stop offset="100%" stopColor="#030710" />
                   </radialGradient>
                   <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(255, 255, 255, 0.8)" />
+                    <stop offset="0%" stopColor="rgba(255, 255, 255, 0.9)" />
                     <stop offset="50%" stopColor="var(--accent-color)" />
-                    <stop offset="100%" stopColor="rgba(255, 255, 255, 0.1)" />
+                    <stop offset="100%" stopColor="rgba(255, 255, 255, 0.15)" />
                   </linearGradient>
                 </defs>
                 {/* Back Ring */}
@@ -249,8 +250,8 @@ export default function TwinklingStars() {
                   r="25"
                   fill="none"
                   stroke="var(--accent-color)"
-                  strokeWidth="1.5"
-                  opacity="0.5"
+                  strokeWidth="2"
+                  opacity="0.6"
                 />
                 {/* Front Ring */}
                 <path
@@ -270,7 +271,7 @@ export default function TwinklingStars() {
                 <defs>
                   <radialGradient id="orbGrad" cx="30%" cy="30%" r="70%">
                     <stop offset="0%" stopColor="#ffffff" />
-                    <stop offset="35%" stopColor="rgba(var(--accent-color-rgb), 0.9)" />
+                    <stop offset="35%" stopColor="rgba(var(--accent-color-rgb), 0.95)" />
                     <stop offset="70%" stopColor="#1a0b2e" />
                     <stop offset="100%" stopColor="#05020a" />
                   </radialGradient>
@@ -283,7 +284,7 @@ export default function TwinklingStars() {
                   fill="none"
                   stroke="var(--accent-color)"
                   strokeWidth="2"
-                  opacity="0.6"
+                  opacity="0.7"
                 />
               </svg>
             </div>
@@ -294,7 +295,7 @@ export default function TwinklingStars() {
               <svg viewBox="0 0 100 100" className="planet-svg">
                 <defs>
                   <radialGradient id="moonGrad" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" stopColor="#e2e8f0" />
+                    <stop offset="0%" stopColor="#f1f5f9" />
                     <stop offset="50%" stopColor="#94a3b8" />
                     <stop offset="85%" stopColor="#334155" />
                     <stop offset="100%" stopColor="#0f172a" />
@@ -302,15 +303,15 @@ export default function TwinklingStars() {
                 </defs>
                 <circle cx="50" cy="50" r="40" fill="url(#moonGrad)" />
                 {/* Surface Craters */}
-                <circle cx="38" cy="35" r="7" fill="#64748b" opacity="0.4" />
-                <circle cx="60" cy="52" r="9" fill="#475569" opacity="0.5" />
-                <circle cx="42" cy="65" r="5" fill="#475569" opacity="0.4" />
+                <circle cx="38" cy="35" r="7" fill="#64748b" opacity="0.45" />
+                <circle cx="60" cy="52" r="9" fill="#475569" opacity="0.55" />
+                <circle cx="42" cy="65" r="5" fill="#475569" opacity="0.45" />
                 <circle
                   cx="50"
                   cy="50"
                   r="40.5"
                   fill="none"
-                  stroke="rgba(255,255,255,0.4)"
+                  stroke="rgba(255,255,255,0.5)"
                   strokeWidth="1.5"
                 />
               </svg>
@@ -330,7 +331,7 @@ export default function TwinklingStars() {
             top: `${asteroid.y}%`,
             width: `${asteroid.size}px`,
             height: `${asteroid.size}px`,
-            animation: `spaceFloat ${asteroid.duration}s ease-in-out infinite alternate`,
+            animation: `spaceFloat ${asteroid.duration}s linear infinite alternate`,
             animationDelay: `${asteroid.delay}s`,
             "--drift-x": `${asteroid.driftX}px`,
             "--drift-y": `${asteroid.driftY}px`,
@@ -349,7 +350,7 @@ export default function TwinklingStars() {
             <svg viewBox="0 0 30 30" width="100%" height="100%">
               <defs>
                 <linearGradient id={`astGrad-${asteroid.id}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#64748b" />
+                  <stop offset="0%" stopColor="#94a3b8" />
                   <stop offset="60%" stopColor="#1e293b" />
                   <stop offset="100%" stopColor="#0f172a" />
                 </linearGradient>
@@ -358,8 +359,8 @@ export default function TwinklingStars() {
                 d={asteroid.path}
                 fill={`url(#astGrad-${asteroid.id})`}
                 stroke="var(--accent-color)"
-                strokeWidth="0.8"
-                opacity="0.85"
+                strokeWidth="1"
+                opacity="0.9"
               />
             </svg>
           </div>

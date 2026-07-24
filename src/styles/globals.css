@@ -561,75 +561,8 @@ p {
 }
 
 /* =========================
-   COSMIC COMET & ORBIT CURSOR
+   NEON SMOKE CURSOR
 ========================= */
-
-@media (hover: hover) and (min-width: 769px) {
-  body, a, button, input, textarea, select, [role="button"] {
-    cursor: none !important;
-  }
-}
-
-.comet-core {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  margin-top: -4px;
-  margin-left: -4px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 
-    0 0 8px #ffffff,
-    0 0 16px rgba(var(--accent-color-rgb), 0.9),
-    0 0 24px rgba(var(--accent-color-rgb), 0.5);
-  pointer-events: none;
-  z-index: 99999;
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, margin 0.2s ease;
-  will-change: transform;
-}
-
-.comet-core-hover {
-  width: 12px;
-  height: 12px;
-  margin-top: -6px;
-  margin-left: -6px;
-  background: var(--accent-color);
-  box-shadow: 
-    0 0 12px #ffffff,
-    0 0 24px var(--accent-color),
-    0 0 36px var(--accent-color);
-}
-
-.comet-orbit-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 34px;
-  height: 34px;
-  margin-top: -17px;
-  margin-left: -17px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(var(--accent-color-rgb), 0.5);
-  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.2);
-  pointer-events: none;
-  z-index: 99997;
-  transition: width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), margin 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border 0.2s ease, background 0.2s ease;
-  will-change: transform;
-}
-
-.comet-orbit-hover {
-  width: 54px;
-  height: 54px;
-  margin-top: -27px;
-  margin-left: -27px;
-  border: 2px solid var(--accent-color);
-  background: rgba(var(--accent-color-rgb), 0.12);
-  box-shadow: 
-    0 0 20px rgba(var(--accent-color-rgb), 0.6),
-    inset 0 0 12px rgba(var(--accent-color-rgb), 0.2);
-}
 
 .neon-smoke {
   position: fixed;

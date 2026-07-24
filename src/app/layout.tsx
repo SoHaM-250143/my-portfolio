@@ -1,7 +1,7 @@
 import "./globals.css";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import CosmicCometCursor from "@/components/CosmicCometCursor";
+import NeonSmokeCursor from "@/components/NeonSmokeCursor";
 import SocialSidebar from "@/components/SocialSidebar";
 import VerticalEmail from "@/components/VerticalEmail";
 import LogoLoader from "@/components/LogoLoader";
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <LogoLoader />
-        <CosmicCometCursor />
+        <NeonSmokeCursor />
         <TwinklingStars />
         <SocialSidebar />
         <VerticalEmail />

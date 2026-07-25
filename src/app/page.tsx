@@ -70,13 +70,24 @@ export default function HomePage() {
 
       {/* ABOUT ME SECTION */}
       <section className="about-section">
+        {/* Creative Greeting Header */}
+        <div className="about-hero-intro">
+          <span className="about-greeting-badge">👋 Welcome to my Portfolio</span>
+          <h1 className="about-hero-name">
+            Hello! Myself <span className="highlight-name">Soham Ramesh Mhatre</span>
+          </h1>
+          <p className="about-hero-sub">
+            AI Researcher & Full-Stack Developer driven by data intelligence, clean architecture, and modern web innovation.
+          </p>
+        </div>
+
         <h2 className="about-title">👤 About Me</h2>
         <div className="about-container">
           {/* Left: Dynamic Theme-Filtered Profile Photo */}
           <div className="about-photo-wrapper">
             <img 
               src="/images/soham.png" 
-              alt="Soham Mhatre" 
+              alt="Soham Ramesh Mhatre" 
               className="about-photo"
             />
             <div className="about-photo-overlay" />
@@ -95,6 +106,9 @@ export default function HomePage() {
             </p>
             <p>
               With a strong background in computer science fundamentals, database engineering, and scalable architecture, I strive for technical excellence in every product. Driven by curiosity and innovation, I continuously explore emerging AI technologies to build groundbreaking digital platforms.
+            </p>
+            <p>
+              Beyond coding and AI model development, I am passionate about crafting intuitive digital experiences, optimizing algorithm performance, and collaborating on high-impact tech solutions that make a real-world difference.
             </p>
           </div>
         </div>

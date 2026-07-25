@@ -56,7 +56,7 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
   background: radial-gradient(circle at 50% 50%, #060913 0%, #030408 60%, #010204 100%);
 }
@@ -566,10 +566,10 @@ p {
 
 .neon-smoke {
   position: fixed;
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   pointer-events: none;
-  z-index: 9999;
+  z-index: -1;
   background: radial-gradient(
     circle,
     rgba(var(--smoke-color-rgb), 0.35) 0%,
@@ -2097,6 +2097,8 @@ input:checked + .slider::before {
   max-width: 1000px;
   margin: 40px auto 60px auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .about-title {
@@ -2114,7 +2116,7 @@ input:checked + .slider::before {
   grid-template-columns: 280px 1fr;
   gap: 36px;
   align-items: center;
-  background: rgba(12, 12, 18, 0.7);
+  background: rgba(12, 12, 18, 0.85);
   border: 1px solid rgba(var(--accent-color-rgb), 0.35);
   border-radius: 16px;
   padding: 30px;
@@ -2123,6 +2125,8 @@ input:checked + .slider::before {
     0 0 18px rgba(var(--accent-color-rgb), 0.15);
   backdrop-filter: blur(12px);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .about-container:hover {
@@ -2143,6 +2147,7 @@ input:checked + .slider::before {
   box-shadow: 0 0 20px rgba(var(--accent-color-rgb), 0.4);
   cursor: pointer;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  z-index: 1;
 }
 
 .about-photo-wrapper:hover {
@@ -2158,9 +2163,9 @@ input:checked + .slider::before {
   height: 100%;
   object-fit: cover;
   display: block;
-  /* Default state: Theme-colored filtered look */
-  filter: grayscale(70%) sepia(25%) hue-rotate(180deg) brightness(0.95) contrast(1.1);
-  mix-blend-mode: luminosity;
+  /* Default state: Bold theme-colored duotone filter */
+  filter: grayscale(100%) contrast(1.1) brightness(0.9);
+  mix-blend-mode: multiply;
   transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), mix-blend-mode 0.5s ease, transform 0.5s ease;
 }
 
@@ -2169,15 +2174,15 @@ input:checked + .slider::before {
   position: absolute;
   inset: 0;
   background: var(--accent-color);
-  opacity: 0.35;
+  opacity: 0.75; /* Higher theme color opacity by default */
   mix-blend-mode: color;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
-/* Hover State: Filter disappears to reveal natural full-color photo */
+/* Hover State: Filter disappears completely to reveal natural full-color photo */
 .about-photo-wrapper:hover .about-photo {
-  filter: grayscale(0%) sepia(0%) hue-rotate(0deg) brightness(1) contrast(1);
+  filter: grayscale(0%) contrast(1) brightness(1);
   mix-blend-mode: normal;
   transform: scale(1.05);
 }

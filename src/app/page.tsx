@@ -85,7 +85,7 @@ export default function HomePage() {
           {/* Right: Paragraph */}
           <div className="about-text">
             <p>
-              I am a <strong>Master of Computer Application (MCA) graduate</strong> from PES Modern College of Engineering, Pune, with a deep passion for Artificial Intelligence, Machine Learning, and Full-Stack Engineering.
+              I am a Master of Computer Application (MCA) graduate from PES Modern College of Engineering, Pune, with a deep passion for Artificial Intelligence, Machine Learning, and Full-Stack Engineering.
             </p>
             <p>
               Throughout my journey, I have engineered complex, research-driven projects leveraging cutting-edge AI models, predictive analytics, and data intelligence.

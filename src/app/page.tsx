@@ -68,9 +68,8 @@ export default function HomePage() {
     <>
       <Header />
 
-      {/* ABOUT ME SECTION */}
-      <section className="about-section">
-        {/* Creative Greeting Header */}
+      {/* HERO LANDING SECTION (CENTERED IN MIDDLE OF PAGE) */}
+      <section className="hero-landing-section">
         <div className="about-hero-intro">
           <span className="about-greeting-badge">👋 Welcome to my Portfolio</span>
           <h1 className="about-hero-name">
@@ -81,6 +80,19 @@ export default function HomePage() {
           </p>
         </div>
 
+        <div 
+          className="hero-scroll-indicator"
+          onClick={() => {
+            const aboutSec = document.getElementById("about-section");
+            if (aboutSec) aboutSec.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <span>↓ Scroll down to explore</span>
+        </div>
+      </section>
+
+      {/* ABOUT ME SECTION (SEEN AFTER SCROLLING) */}
+      <section className="about-section" id="about-section">
         <h2 className="about-title">👤 About Me</h2>
         <div className="about-container">
           {/* Left: Dynamic Theme-Filtered Profile Photo */}

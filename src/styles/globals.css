@@ -2101,21 +2101,35 @@ input:checked + .slider::before {
   z-index: 1;
 }
 
-/* About Hero Intro Greeting Header */
-.about-hero-intro {
-  text-align: center;
-  margin-bottom: 36px;
+/* =========================
+   HERO LANDING SECTION (CENTERED)
+========================= */
+
+.hero-landing-section {
+  min-height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .about-greeting-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 8px 20px;
   background: rgba(var(--accent-color-rgb), 0.12);
   border: 1px solid rgba(var(--accent-color-rgb), 0.4);
   border-radius: 30px;
@@ -2123,11 +2137,11 @@ input:checked + .slider::before {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.2);
+  box-shadow: 0 0 20px rgba(var(--accent-color-rgb), 0.25);
 }
 
 .about-hero-name {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 800;
   color: #ffffff;
   margin: 0;
@@ -2137,15 +2151,41 @@ input:checked + .slider::before {
 
 .highlight-name {
   color: var(--accent-color);
-  text-shadow: 0 0 18px rgba(var(--accent-color-rgb), 0.6);
+  text-shadow: 0 0 22px rgba(var(--accent-color-rgb), 0.7);
 }
 
 .about-hero-sub {
-  font-size: 16px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.hero-scroll-indicator {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  animation: bounceSlow 2s infinite ease-in-out;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+  color: var(--accent-color);
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 .about-title {

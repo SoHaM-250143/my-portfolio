@@ -2088,3 +2088,143 @@ input:checked + .slider::before {
   50% { transform: translateY(-16px); }
   100% { transform: translateY(0px); }
 }
+
+/* =========================
+   ABOUT ME SECTION
+========================= */
+
+.about-section {
+  max-width: 1000px;
+  margin: 40px auto 60px auto;
+  padding: 0 20px;
+}
+
+.about-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  align-items: center;
+  background: rgba(12, 12, 18, 0.7);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.35);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 
+    0 0 30px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(var(--accent-color-rgb), 0.15);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-container:hover {
+  border-color: rgba(var(--accent-color-rgb), 0.6);
+  box-shadow: 
+    0 0 35px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(var(--accent-color-rgb), 0.25);
+}
+
+.about-photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 20px rgba(var(--accent-color-rgb), 0.4);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.about-photo-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 
+    0 0 30px rgba(var(--accent-color-rgb), 0.7),
+    0 0 50px rgba(var(--accent-color-rgb), 0.35);
+}
+
+/* Photo Element */
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Default state: Theme-colored filtered look */
+  filter: grayscale(70%) sepia(25%) hue-rotate(180deg) brightness(0.95) contrast(1.1);
+  mix-blend-mode: luminosity;
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), mix-blend-mode 0.5s ease, transform 0.5s ease;
+}
+
+/* Colored Overlay Layer for Dynamic Theme Tinting */
+.about-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-color);
+  opacity: 0.35;
+  mix-blend-mode: color;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Hover State: Filter disappears to reveal natural full-color photo */
+.about-photo-wrapper:hover .about-photo {
+  filter: grayscale(0%) sepia(0%) hue-rotate(0deg) brightness(1) contrast(1);
+  mix-blend-mode: normal;
+  transform: scale(1.05);
+}
+
+.about-photo-wrapper:hover .about-photo-overlay {
+  opacity: 0;
+}
+
+/* Text Content */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.about-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.about-text p strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .about-section {
+    margin: 20px auto 40px auto;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+
+  .about-photo-wrapper {
+    margin: 0 auto;
+    max-width: 220px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}

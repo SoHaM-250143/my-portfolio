@@ -68,6 +68,38 @@ export default function HomePage() {
     <>
       <Header />
 
+      {/* ABOUT ME SECTION */}
+      <section className="about-section">
+        <h2 className="about-title">👤 About Me</h2>
+        <div className="about-container">
+          {/* Left: Dynamic Theme-Filtered Profile Photo */}
+          <div className="about-photo-wrapper">
+            <img 
+              src="/images/soham.png" 
+              alt="Soham Mhatre" 
+              className="about-photo"
+            />
+            <div className="about-photo-overlay" />
+          </div>
+
+          {/* Right: Paragraph */}
+          <div className="about-text">
+            <p>
+              I am a <strong>Master of Computer Application (MCA) graduate</strong> from PES Modern College of Engineering, Pune, with a deep passion for Artificial Intelligence, Machine Learning, and Full-Stack Engineering.
+            </p>
+            <p>
+              Throughout my journey, I have engineered complex, research-driven projects leveraging cutting-edge AI models, predictive analytics, and data intelligence.
+            </p>
+            <p>
+              My expertise spans building end-to-end intelligent systems, training data models, and designing sleek, high-performance web applications. I excel at tackling tough computational challenges and translating intricate AI research concepts into functional, real-world software solutions.
+            </p>
+            <p>
+              With a strong background in computer science fundamentals, database engineering, and scalable architecture, I strive for technical excellence in every product. Driven by curiosity and innovation, I continuously explore emerging AI technologies to build groundbreaking digital platforms.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="education-section">
         <h2 className="education-title">🎓 Education</h2>
         <div className="timeline-container">

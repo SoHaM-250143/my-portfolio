@@ -620,23 +620,23 @@ p {
 }
 
 .timeline-nav {
-  flex: 1;
+  flex: 1.1;
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-left: 30px;
+  padding-left: 115px;
 }
 
 /* Vertical line */
 .timeline-nav::before {
   content: '';
   position: absolute;
-  left: 10px;
+  left: 95px;
   top: 10px;
   bottom: 10px;
   width: 2px;
-  background: rgba(var(--accent-color-rgb), 0.2);
-  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.1);
+  background: rgba(var(--accent-color-rgb), 0.25);
+  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.15);
 }
 
 .timeline-item {
@@ -649,6 +649,26 @@ p {
   transition: all 0.3s ease;
 }
 
+/* Passing year on the left side of the dot */
+.timeline-year-left {
+  position: absolute;
+  right: calc(100% + 22px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  text-align: right;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active .timeline-year-left {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
+}
+
+/* Timeline Dot */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -1126,6 +1146,19 @@ p {
   .timeline-container {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .timeline-nav {
+    padding-left: 95px;
+  }
+
+  .timeline-nav::before {
+    left: 75px;
+  }
+
+  .timeline-year-left {
+    font-size: 11.5px;
+    right: calc(100% + 16px);
   }
 
   .timeline-display {

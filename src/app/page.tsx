@@ -137,10 +137,13 @@ export default function HomePage() {
                 className={`timeline-item ${activeEduIndex === idx ? "active" : ""}`}
                 onClick={() => setActiveEduIndex(idx)}
               >
-                <h3>{edu.degree}</h3>
-                <p>{edu.institution} • {edu.year}</p>
-                <div className="timeline-mobile-details">
-                  <p>{edu.details}</p>
+                <span className="timeline-year-left">{edu.year}</span>
+                <div className="timeline-content">
+                  <h3>{edu.degree}</h3>
+                  <p>{edu.institution}</p>
+                  <div className="timeline-mobile-details">
+                    <p>{edu.details}</p>
+                  </div>
                 </div>
               </div>
             ))}

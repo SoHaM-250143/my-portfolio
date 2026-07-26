@@ -624,14 +624,14 @@ p {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-left: 115px;
+  padding-left: 140px;
 }
 
 /* Vertical line */
 .timeline-nav::before {
   content: '';
   position: absolute;
-  left: 95px;
+  left: 115px;
   top: 10px;
   bottom: 10px;
   width: 2px;
@@ -652,7 +652,7 @@ p {
 /* Passing year on the left side of the dot */
 .timeline-year-left {
   position: absolute;
-  right: calc(100% + 22px);
+  right: calc(100% + 40px);
   top: 50%;
   transform: translateY(-50%);
   font-size: 13px;
@@ -672,7 +672,7 @@ p {
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -25px;
+  left: -31px;
   top: 50%;
   transform: translateY(-50%);
   width: 12px;
@@ -1149,16 +1149,20 @@ p {
   }
 
   .timeline-nav {
-    padding-left: 95px;
+    padding-left: 115px;
   }
 
   .timeline-nav::before {
-    left: 75px;
+    left: 90px;
+  }
+
+  .timeline-item::before {
+    left: -31px;
   }
 
   .timeline-year-left {
     font-size: 11.5px;
-    right: calc(100% + 16px);
+    right: calc(100% + 38px);
   }
 
   .timeline-display {

@@ -73,28 +73,27 @@ export default function Header() {
 
   return (
     <header className={`header ${scrollDirection === "down" ? "header-hidden" : ""}`}>
-      {/* LEFT: SETTINGS BUTTON */}
+      {/* LEFT: SETTINGS + LOGO + NAME (SHIFTED LEFT) */}
       <div className="header-left">
         <ThemeSettings />
-      </div>
 
-      {/* MIDDLE: LOGO + NAME */}
-      <div 
-        className="header-middle" 
-        onClick={() => {
-          window.dispatchEvent(new Event("trigger-logo-reload-anim"));
-          setScrambleKey(prev => prev + 1);
-        }}
-        style={{ cursor: "pointer" }}
-      >
-        <LogoSVG className="header-logo" />
-        <h1 className="name-centered">
-          {isMainPage ? (
-            <TextScramble key={scrambleKey} text="Soham Mhatre" delay={2.5} />
-          ) : (
-            "Soham Mhatre"
-          )}
-        </h1>
+        <div 
+          className="header-brand" 
+          onClick={() => {
+            window.dispatchEvent(new Event("trigger-logo-reload-anim"));
+            setScrambleKey(prev => prev + 1);
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          <LogoSVG className="header-logo" />
+          <h1 className="name-centered">
+            {isMainPage ? (
+              <TextScramble key={scrambleKey} text="Soham Mhatre" delay={2.5} />
+            ) : (
+              "Soham Mhatre"
+            )}
+          </h1>
+        </div>
       </div>
 
       {/* RIGHT: NAVIGATION LINKS + DOWNLOAD RESUME */}

@@ -1222,6 +1222,29 @@ p {
     display: inline;
   }
 
+  .theme-settings-container {
+    margin-top: 2px !important;
+    align-self: center !important;
+  }
+
+  .theme-settings-btn {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 18px !important;
+    margin-top: 0 !important;
+  }
+
+  .theme-settings-panel {
+    position: fixed !important;
+    top: 60px !important;
+    right: 14px !important;
+    left: 14px !important;
+    width: auto !important;
+    min-width: unset !important;
+    max-width: none !important;
+    margin-top: 0 !important;
+  }
+
   .name-centered {
     display: inline-block;
     font-size: 14px;
@@ -1640,32 +1663,37 @@ p {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   z-index: 1001;
+  margin-top: 5px; /* Shifted button down so it sits comfortably inside header */
 }
 
 .theme-settings-btn {
   background: transparent;
   border: none;
-  font-size: 22px;
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
   cursor: pointer;
   color: var(--accent-color);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 0;
   outline: none;
-  margin-top: 0; /* Center vertically beside Download Resume */
+  margin: 0;
+  line-height: 1;
 }
 
 .theme-settings-btn:hover {
-  transform: rotate(60deg) scale(1.15);
+  transform: rotate(60deg) scale(1.12);
   text-shadow: 0 0 10px var(--accent-color);
 }
 
 .theme-settings-panel {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 14px);
   right: 0;
   left: auto;
   margin-top: 0;

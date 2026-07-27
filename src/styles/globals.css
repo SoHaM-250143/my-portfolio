@@ -1223,22 +1223,22 @@ p {
   }
 
   .theme-settings-container {
-    margin-top: 2px !important;
+    margin-top: 0 !important;
     align-self: center !important;
   }
 
   .theme-settings-btn {
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 18px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 15px !important;
     margin-top: 0 !important;
   }
 
   .theme-settings-panel {
     position: fixed !important;
-    top: 60px !important;
-    right: 14px !important;
-    left: 14px !important;
+    top: 62px !important;
+    right: 12px !important;
+    left: 12px !important;
     width: auto !important;
     min-width: unset !important;
     max-width: none !important;
@@ -1660,53 +1660,68 @@ p {
 ========================= */
 
 .theme-settings-container {
-  position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   z-index: 1001;
-  margin-top: 5px; /* Shifted button down so it sits comfortably inside header */
+  flex-shrink: 0;
 }
 
 .theme-settings-btn {
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  width: 34px;
-  height: 34px;
-  cursor: pointer;
-  color: var(--accent-color);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0.2s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  outline: none;
-  margin: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.35);
+  color: var(--accent-color);
+  font-size: 17px;
   line-height: 1;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.15);
+  flex-shrink: 0;
 }
 
 .theme-settings-btn:hover {
-  transform: rotate(60deg) scale(1.12);
-  text-shadow: 0 0 10px var(--accent-color);
+  background: rgba(var(--accent-color-rgb), 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.5);
+  transform: rotate(60deg) scale(1.08);
+}
+
+.theme-settings-btn:active {
+  transform: scale(0.95);
+}
+
+.settings-gear-icon {
+  display: inline-block;
+  line-height: 1;
+  transform: translateY(-0.5px);
 }
 
 .theme-settings-panel {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + 12px);
   right: 0;
   left: auto;
   margin-top: 0;
   background: var(--panel-bg);
   border: 2px solid var(--accent-color) !important;
   border-radius: 16px;
-  padding: 24px;
+  padding: 22px;
   min-width: 260px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95), 0 0 25px rgba(var(--accent-color-rgb), 0.3);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   display: flex !important;
   flex-direction: column !important;
-  gap: 20px;
+  gap: 18px;
   animation: panelSlideIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 99999 !important;

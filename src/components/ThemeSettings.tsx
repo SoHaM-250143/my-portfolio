@@ -86,7 +86,7 @@ export default function ThemeSettings() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Theme settings"
         >
-          ⚙️
+          <span className="settings-gear-icon">⚙️</span>
         </button>
       </Magnetic>
 

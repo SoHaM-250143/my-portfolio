@@ -73,10 +73,8 @@ export default function Header() {
 
   return (
     <header className={`header ${scrollDirection === "down" ? "header-hidden" : ""}`}>
-      {/* LEFT: SETTINGS + LOGO + NAME (SHIFTED LEFT) */}
+      {/* LEFT: LOGO + NAME (SHIFTED LEFT) */}
       <div className="header-left">
-        <ThemeSettings />
-
         <div 
           className="header-brand" 
           onClick={() => {
@@ -96,7 +94,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* RIGHT: NAVIGATION LINKS + DOWNLOAD RESUME */}
+      {/* RIGHT: NAVIGATION LINKS + DOWNLOAD RESUME + SETTINGS BUTTON */}
       <div className="header-right">
         <nav className="header-nav">
           {navItems.map((item) => (
@@ -117,6 +115,9 @@ export default function Header() {
             <span className="mobile-resume">Resume</span>
           </a>
         </Magnetic>
+
+        {/* Theme Settings Button (Right Top Beside Download Resume) */}
+        <ThemeSettings />
       </div>
     </header>
   );

@@ -176,7 +176,7 @@ p {
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo {
@@ -186,30 +186,33 @@ p {
 }
 
 .header-logo {
+  width: 44px !important;
+  height: 44px !important;
   color: var(--accent-color);
-  filter: drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.5));
-  transition: color 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(var(--accent-color-rgb), 0.6));
+  transition: color 0.3s ease, filter 0.3s ease, transform 0.3s ease;
 }
 
 .header-logo:hover {
-  filter: drop-shadow(0 0 12px var(--accent-color));
+  filter: drop-shadow(0 0 16px var(--accent-color));
+  transform: scale(1.06);
 }
 
 .name-centered {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 800; /* Extra bold */
   color: var(--accent-color);
-  text-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.6);
+  text-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.7);
   margin: 0;
   cursor: pointer;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.4px;
   transition: transform 0.2s ease, text-shadow 0.2s ease;
   white-space: nowrap;
 }
 
 .name-centered:hover {
-  transform: scale(1.04);
-  text-shadow: 0 0 16px var(--accent-color);
+  transform: scale(1.03);
+  text-shadow: 0 0 20px var(--accent-color);
 }
 
 /* =========================

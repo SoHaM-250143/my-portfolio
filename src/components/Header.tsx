@@ -16,14 +16,15 @@ export default function Header() {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState("hero-landing-section");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "hero-landing-section", label: "Home" },
-    { id: "about-section", label: "About" },
-    { id: "education-section", label: "Education" },
-    { id: "skills-section", label: "Skills" },
-    { id: "certifications-section", label: "Certifications" },
-    { id: "contact-section", label: "Contact" },
+    { id: "hero-landing-section", label: "Home", icon: "🏠" },
+    { id: "about-section", label: "About", icon: "👤" },
+    { id: "education-section", label: "Education", icon: "🎓" },
+    { id: "skills-section", label: "Skills", icon: "💻" },
+    { id: "certifications-section", label: "Certifications", icon: "📜" },
+    { id: "contact-section", label: "Contact", icon: "📬" },
   ];
 
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function Header() {
   }, [lastScrollY, isMainPage]);
 
   const scrollToSection = (id: string) => {
+    setIsMobileMenuOpen(false);
     if (pathname !== "/") {
       router.push(`/#${id}`);
     } else {
@@ -94,9 +96,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* RIGHT: NAVIGATION LINKS + DOWNLOAD RESUME + SETTINGS BUTTON */}
+      {/* RIGHT: NAVIGATION LINKS + DOWNLOAD RESUME + SETTINGS + HAMBURGER */}
       <div className="header-right">
-        <nav className="header-nav">
+        {/* Desktop Section Navigation Links */}
+        <nav className="header-nav desktop-nav">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -118,7 +121,34 @@ export default function Header() {
 
         {/* Theme Settings Button (Right Top Beside Download Resume) */}
         <ThemeSettings />
+
+        {/* Phone View: Three-Lines Hamburger Button */}
+        <button
+          className="mobile-hamburger-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`hamburger-bar ${isMobileMenuOpen ? "open" : ""}`} />
+          <span className={`hamburger-bar ${isMobileMenuOpen ? "open" : ""}`} />
+          <span className={`hamburger-bar ${isMobileMenuOpen ? "open" : ""}`} />
+        </button>
       </div>
+
+      {/* Mobile Nav Dropdown Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-nav-dropdown">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`mobile-nav-item ${activeSection === item.id ? "active" : ""}`}
+            >
+              <span className="mobile-nav-icon">{item.icon}</span>
+              <span>{item.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </header>
   );
 }

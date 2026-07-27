@@ -302,6 +302,98 @@ p {
   display: none;
 }
 
+/* Mobile Hamburger Three-Lines Button */
+.mobile-hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1002;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(var(--accent-color-rgb), 0.5);
+}
+
+.hamburger-bar.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-bar.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Nav Dropdown Overlay */
+.mobile-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(12, 12, 18, 0.98);
+  border-bottom: 2px solid var(--accent-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(var(--accent-color-rgb), 0.25);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px;
+  gap: 10px;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(var(--accent-color-rgb), 0.06);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item.active {
+  background: rgba(var(--accent-color-rgb), 0.2);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  box-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.3);
+}
+
+.mobile-nav-icon {
+  font-size: 18px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* About dropdown wrapper */
 .about-wrapper {
   position: relative;
@@ -1114,22 +1206,12 @@ p {
     gap: 8px;
   }
 
-  .header-nav {
-    gap: 8px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    max-width: 140px;
-    padding: 2px 0;
+  .desktop-nav {
+    display: none !important;
   }
 
-  .header-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .header-nav-link {
-    font-size: 11px;
-    padding: 2px 4px;
+  .mobile-hamburger-btn {
+    display: flex;
   }
 
   .desktop-resume {
@@ -1571,9 +1653,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 4px;
   outline: none;
-  margin-top: 12px;
+  margin-top: 0; /* Center vertically beside Download Resume */
 }
 
 .theme-settings-btn:hover {
@@ -1583,9 +1665,10 @@ p {
 
 .theme-settings-panel {
   position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 15px;
+  top: calc(100% + 12px);
+  right: 0;
+  left: auto;
+  margin-top: 0;
   background: var(--panel-bg);
   border: 2px solid var(--accent-color) !important;
   border-radius: 16px;

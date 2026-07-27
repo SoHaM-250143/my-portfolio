@@ -79,16 +79,14 @@ export default function ThemeSettings() {
 
   return (
     <div className="theme-settings-container">
-      {/* Floating Settings Button */}
-      <Magnetic>
-        <button 
-          className="theme-settings-btn" 
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Theme settings"
-        >
-          <span className="settings-gear-icon">⚙️</span>
-        </button>
-      </Magnetic>
+      {/* Settings Button */}
+      <button 
+        className="theme-settings-btn" 
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Theme settings"
+      >
+        <span className="settings-gear-icon">⚙️</span>
+      </button>
 
       {/* Settings Panel */}
       {isOpen && (

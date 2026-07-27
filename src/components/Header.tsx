@@ -15,6 +15,16 @@ export default function Header() {
   const isMainPage = pathname === "/";
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState("hero-landing-section");
+
+  const navItems = [
+    { id: "hero-landing-section", label: "Home" },
+    { id: "about-section", label: "About" },
+    { id: "education-section", label: "Education" },
+    { id: "skills-section", label: "Skills" },
+    { id: "certifications-section", label: "Certifications" },
+    { id: "contact-section", label: "Contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,24 +34,46 @@ export default function Header() {
       if (currentScrollY <= 80) {
         setScrollDirection("up");
         setLastScrollY(currentScrollY);
-        return;
+      } else {
+        if (currentScrollY > lastScrollY) {
+          setScrollDirection("down");
+        } else {
+          setScrollDirection("up");
+        }
+        setLastScrollY(currentScrollY);
       }
 
-      if (currentScrollY > lastScrollY) {
-        setScrollDirection("down");
-      } else {
-        setScrollDirection("up");
+      // Track active section on scroll if on home page
+      if (isMainPage) {
+        const scrollPosition = window.scrollY + 220;
+        for (let i = navItems.length - 1; i >= 0; i--) {
+          const section = document.getElementById(navItems[i].id);
+          if (section && section.offsetTop <= scrollPosition) {
+            setActiveSection(navItems[i].id);
+            break;
+          }
+        }
       }
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isMainPage]);
+
+  const scrollToSection = (id: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header className={`header ${scrollDirection === "down" ? "header-hidden" : ""}`}>
-      {/* LEFT: SETTINGS BUTTON (LOGO REMOVED) */}
+      {/* LEFT: SETTINGS BUTTON */}
       <div className="header-left">
         <ThemeSettings />
       </div>
@@ -65,8 +97,20 @@ export default function Header() {
         </h1>
       </div>
 
-      {/* RIGHT: DOWNLOAD RESUME */}
+      {/* RIGHT: NAVIGATION LINKS + DOWNLOAD RESUME */}
       <div className="header-right">
+        <nav className="header-nav">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`header-nav-link ${activeSection === item.id ? "active" : ""}`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
         {/* Download Resume */}
         <Magnetic>
           <a href="/Soham_Mhatre_2026.pdf" download="Soham_Mhatre_2026.pdf" className="contact-btn">

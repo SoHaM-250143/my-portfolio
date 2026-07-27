@@ -69,7 +69,7 @@ export default function HomePage() {
       <Header />
 
       {/* HERO LANDING SECTION (CENTERED IN MIDDLE OF PAGE) */}
-      <section className="hero-landing-section">
+      <section className="hero-landing-section" id="hero-landing-section">
         <div className="about-hero-intro">
           <span className="about-greeting-badge">👋 Welcome to my Portfolio</span>
           <h1 className="about-hero-name">
@@ -126,7 +126,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="education-section">
+      <section className="education-section" id="education-section">
         <h2 className="education-title">🎓 Education</h2>
         <div className="timeline-container">
           {/* Navigation panel */}
@@ -168,7 +168,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="skills-section">
+      <section className="skills-section" id="skills-section">
         <h2 className="skills-title">💻 Skills</h2>
         <div className="home">
         <SectionCard
@@ -245,7 +245,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="certifications-section">
+      <section className="certifications-section" id="certifications-section">
         <h2 className="certifications-title">📜 Certifications</h2>
         <div className="certifications-list">
           {[
@@ -302,7 +302,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="contact-section">
+      <section className="contact-section" id="contact-section">
         <h2 className="contact-title">📬 Contact Me</h2>
         <form
           className="contact-form"

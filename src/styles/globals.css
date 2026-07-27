@@ -218,18 +218,50 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 20px;
 }
 
-.header-right a {
-  text-decoration: none;
+/* Header Navigation Links */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-nav-link {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 6px;
+  position: relative;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+  white-space: nowrap;
+}
+
+.header-nav-link:hover {
   color: var(--accent-color);
-  transition: transform 0.2s ease, text-shadow 0.2s ease;
+  text-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.5);
 }
 
-.header-right a:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 10px var(--accent-color);
+.header-nav-link.active {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.6);
+}
+
+.header-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 6px;
+  right: 6px;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-color);
 }
 
 /* Contact button */
@@ -1070,6 +1102,24 @@ p {
   .header-right {
     justify-content: flex-end;
     gap: 8px;
+  }
+
+  .header-nav {
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 140px;
+    padding: 2px 0;
+  }
+
+  .header-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-nav-link {
+    font-size: 11px;
+    padding: 2px 4px;
   }
 
   .desktop-resume {

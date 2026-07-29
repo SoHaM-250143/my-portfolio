@@ -6,6 +6,7 @@ import SectionCard from "@/components/SectionCard";
 import GithubGrid from "@/components/GithubGrid";
 import ViewCounter from "@/components/ViewCounter";
 import Magnetic from "@/components/Magnetic";
+import FadeInSection from "@/components/FadeInSection";
 
 export default function HomePage() {
   const [activeEduIndex, setActiveEduIndex] = useState(0);
@@ -69,7 +70,7 @@ export default function HomePage() {
       <Header />
 
       {/* HERO LANDING SECTION (CENTERED IN MIDDLE OF PAGE) */}
-      <section className="hero-landing-section" id="hero-landing-section">
+      <FadeInSection className="hero-landing-section" id="hero-landing-section" delay={0.1}>
         <div className="about-hero-intro">
           <span className="about-greeting-badge">👋 Welcome to my Portfolio</span>
           <h1 className="about-hero-name">
@@ -89,10 +90,10 @@ export default function HomePage() {
         >
           <span>↓ Scroll down to explore</span>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* ABOUT ME SECTION (SEEN AFTER SCROLLING) */}
-      <section className="about-section" id="about-section">
+      <FadeInSection className="about-section" id="about-section">
         <h2 className="about-title">👤 About Me</h2>
         <div className="about-container">
           {/* Left: Dynamic Theme-Filtered Profile Photo */}
@@ -124,9 +125,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="education-section" id="education-section">
+      <FadeInSection className="education-section" id="education-section">
         <h2 className="education-title">🎓 Education</h2>
         <div className="timeline-container">
           {/* Navigation panel */}
@@ -166,9 +167,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="skills-section" id="skills-section">
+      <FadeInSection className="skills-section" id="skills-section">
         <h2 className="skills-title">💻 Skills</h2>
         <div className="home">
         <SectionCard
@@ -192,9 +193,9 @@ export default function HomePage() {
 
         <SectionCard title="Loading" />
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="github-section">
+      <FadeInSection className="github-section">
         <h2 className="github-title">🐙 GitHub Activity</h2>
         <div className="github-content">
           {/* Left Column: Achievements */}
@@ -243,9 +244,9 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="certifications-section" id="certifications-section">
+      <FadeInSection className="certifications-section" id="certifications-section">
         <h2 className="certifications-title">📜 Certifications</h2>
         <div className="certifications-list">
           {[
@@ -300,9 +301,9 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="contact-section" id="contact-section">
+      <FadeInSection className="contact-section" id="contact-section">
         <h2 className="contact-title">📬 Contact Me</h2>
         <form
           className="contact-form"
@@ -343,7 +344,7 @@ export default function HomePage() {
             </button>
           </Magnetic>
         </form>
-      </section>
+      </FadeInSection>
 
       <footer className="footer-section">
         <p className="footer-credit" suppressHydrationWarning>© {new Date().getFullYear()} Soham Mhatre. All rights reserved.</p>

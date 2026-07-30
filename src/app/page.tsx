@@ -13,6 +13,11 @@ export default function HomePage() {
 
   const socials = [
     {
+      name: "Trailhead",
+      url: "https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw",
+      icon: "/icons/trailhead.svg",
+    },
+    {
       name: "GitHub",
       url: "https://github.com/SoHaM-250143",
       icon: "/icons/github.svg",
@@ -26,11 +31,6 @@ export default function HomePage() {
       name: "Instagram",
       url: "https://www.instagram.com/_.sohammm.__?igsh=czhyZHUwY3RmcnV4",
       icon: "/icons/instagram.svg",
-    },
-    {
-      name: "Trailhead",
-      url: "https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw",
-      icon: "/icons/trailhead.svg",
     },
   ];
 

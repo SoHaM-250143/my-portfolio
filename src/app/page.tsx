@@ -28,9 +28,9 @@ export default function HomePage() {
       icon: "/icons/instagram.svg",
     },
     {
-      name: "Twitter",
-      url: "https://x.com/SohamMh85077807",
-      icon: "/icons/twitter.svg",
+      name: "Trailhead",
+      url: "https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw",
+      icon: "/icons/trailhead.svg",
     },
   ];
 

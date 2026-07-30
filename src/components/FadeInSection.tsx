@@ -56,7 +56,7 @@ export default function FadeInSection({
       className={className}
       initial={getInitialPosition()}
       whileInView={getFinalPosition()}
-      viewport={{ once: true, margin: "-70px" }}
+      viewport={{ once: false, amount: 0.15 }}
       transition={{
         duration: 0.75,
         delay: delay,

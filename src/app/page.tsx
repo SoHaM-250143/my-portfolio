@@ -74,7 +74,7 @@ export default function HomePage() {
         <div className="about-hero-intro">
           <span className="about-greeting-badge">👋 Welcome to my Portfolio</span>
           <h1 className="about-hero-name">
-            Hello! Myself <span className="highlight-name">Soham Ramesh Mhatre</span>
+            Hello! I&apos;m <span className="highlight-name">Soham Mhatre</span>
           </h1>
           <p className="about-hero-sub">
             AI Researcher & Full-Stack Developer driven by data intelligence, clean architecture, and modern web innovation.

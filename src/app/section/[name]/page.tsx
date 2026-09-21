@@ -152,21 +152,13 @@ export default function SectionPage() {
     ],
     "Salesforce": [
       {
-        title: "Salesforce CRM Customization & LWC Management",
-        description: "A comprehensive Salesforce Cloud implementation featuring custom objects, Apex triggers, and Lightning Web Components.",
-        details: "Configured custom Salesforce objects, fields, and page layouts tailored for sales workflows. Built Apex classes, triggers, and SOQL query routines to automate lead management and data validation rules. Developed interactive Lightning Web Components (LWC) for custom UI record views.",
-        tech: ["Salesforce CRM", "Apex", "Lightning Web Components (LWC)", "SOQL", "Sales Cloud", "Flow Builder"],
+        title: "External Web Application Sync",
+        description: "A Salesforce integration project for synchronizing external web application data payloads with Salesforce CRM.",
+        details: "Engineered an end-to-end integration solution to seamlessly synchronize external web application data payloads with Salesforce CRM. Implemented custom Apex REST web service handlers, SOQL queries, and automated data mapping rules to maintain real-time data consistency and audit logging across systems.",
+        tech: ["Salesforce", "Apex", "REST API", "Integration", "SOQL", "JSON Parsing"],
         image: "/projects/salesforce-crm.png",
-        github: "https://github.com/SoHaM-250143",
+        github: "https://github.com/SoHaM-250143/External-Web-Application-Sync",
       },
-      {
-        title: "Salesforce Automated Workflow & Security System",
-        description: "Automated business logic and record-level security configuration using Salesforce Flow Builder and Apex.",
-        details: "Engineered automated record approval processes and email alerts using Salesforce Flows. Configured role hierarchies, sharing rules, profiles, and permission sets to enforce strict data privacy and security compliance across multi-user orgs.",
-        tech: ["Salesforce", "Process Automation", "Flow Builder", "Apex", "Security & Sharing", "Data Management"],
-        image: "/projects/salesforce-workflow.png",
-        github: "https://github.com/SoHaM-250143",
-      }
     ],
   };
 
@@ -218,14 +210,6 @@ export default function SectionPage() {
         issuer: "Udemy",
         year: "2026",
         link: "/certificates/advanced-powerbi-cert.pdf",
-      },
-    ],
-    "Salesforce": [
-      {
-        title: "Salesforce Certified Administrator / Developer",
-        issuer: "Salesforce Trailhead",
-        year: "2026",
-        link: "https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw",
       },
     ],
   };

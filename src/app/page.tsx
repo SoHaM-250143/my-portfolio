@@ -191,6 +191,10 @@ export default function HomePage() {
           title="Data Analysis"
         />
 
+        <SectionCard
+          title="Salesforce"
+        />
+
         <SectionCard title="Loading" />
         </div>
       </FadeInSection>

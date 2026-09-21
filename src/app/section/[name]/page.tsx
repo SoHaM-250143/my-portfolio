@@ -44,6 +44,8 @@ export default function SectionPage() {
       "Capable of architecting end-to-end full-stack applications by integrating responsive React.js frontends with scalable Node.js/Express.js backends. Experienced in structuring database schemas using MongoDB, securing API endpoints with JSON Web Tokens (JWT), and designing user role access dashboards. Focused on building clean modular components, structured folder hierarchies, and robust CRUD data-management operations.",
     "Data Analysis":
       "Specialized in transforming unstructured datasets into interactive business intelligence dashboards using Power BI and Tableau. Experienced in developing DAX formulas, modeling relational schemas, and cleaning raw CSV data. Capable of building multimodal forensics pipelines tracking density metrics (Hounsfield Units), geospatial distributions, and engagement analytics to drive data-driven decision making.",
+    "Salesforce":
+      "Specialized in Salesforce Platform development, CRM configuration, Apex programming, Lightning Web Components (LWC), and automated business workflows. Experienced in customizing Salesforce Sales Cloud and Service Cloud objects, building Process Builders/Flows, configuring Security & Access Controls, and designing custom SOQL queries for data management. Dedicated to leveraging Salesforce Cloud solutions to optimize business processes and CRM data integrity.",
   };
 
   /* =========================
@@ -148,6 +150,24 @@ export default function SectionPage() {
         github: "https://github.com/SoHaM-250143/Social-Media-Analysis-Dashboard",
       }
     ],
+    "Salesforce": [
+      {
+        title: "Salesforce CRM Customization & LWC Management",
+        description: "A comprehensive Salesforce Cloud implementation featuring custom objects, Apex triggers, and Lightning Web Components.",
+        details: "Configured custom Salesforce objects, fields, and page layouts tailored for sales workflows. Built Apex classes, triggers, and SOQL query routines to automate lead management and data validation rules. Developed interactive Lightning Web Components (LWC) for custom UI record views.",
+        tech: ["Salesforce CRM", "Apex", "Lightning Web Components (LWC)", "SOQL", "Sales Cloud", "Flow Builder"],
+        image: "/projects/salesforce-crm.png",
+        github: "https://github.com/SoHaM-250143",
+      },
+      {
+        title: "Salesforce Automated Workflow & Security System",
+        description: "Automated business logic and record-level security configuration using Salesforce Flow Builder and Apex.",
+        details: "Engineered automated record approval processes and email alerts using Salesforce Flows. Configured role hierarchies, sharing rules, profiles, and permission sets to enforce strict data privacy and security compliance across multi-user orgs.",
+        tech: ["Salesforce", "Process Automation", "Flow Builder", "Apex", "Security & Sharing", "Data Management"],
+        image: "/projects/salesforce-workflow.png",
+        github: "https://github.com/SoHaM-250143",
+      }
+    ],
   };
 
   /* =========================
@@ -198,6 +218,14 @@ export default function SectionPage() {
         issuer: "Udemy",
         year: "2026",
         link: "/certificates/advanced-powerbi-cert.pdf",
+      },
+    ],
+    "Salesforce": [
+      {
+        title: "Salesforce Certified Administrator / Developer",
+        issuer: "Salesforce Trailhead",
+        year: "2026",
+        link: "https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw",
       },
     ],
   };

@@ -199,57 +199,6 @@ export default function HomePage() {
         </div>
       </FadeInSection>
 
-      <FadeInSection className="github-section">
-        <h2 className="github-title">🐙 GitHub Activity</h2>
-        <div className="github-content">
-          {/* Left Column: Achievements */}
-          <div className="github-achievements">
-            <h3>Badges & Milestones</h3>
-            <div className="achievements-grid">
-              <div className="achievement-badge">
-                <div className="badge-icon">🦈</div>
-                <div className="badge-info">
-                  <h4>Pull Shark</h4>
-                  <p>Opened pull requests that were successfully merged</p>
-                </div>
-              </div>
-              <div className="achievement-badge">
-                <div className="badge-icon">🏹</div>
-                <div className="badge-info">
-                  <h4>Quickdraw</h4>
-                  <p>Resolved issues or pull requests in record time</p>
-                </div>
-              </div>
-              <div className="achievement-badge">
-                <div className="badge-icon">🛸</div>
-                <div className="badge-info">
-                  <h4>Yolo</h4>
-                  <p>Directly merged code updates for fast iterations</p>
-                </div>
-              </div>
-              <div className="achievement-badge">
-                <div className="badge-icon">❄️</div>
-                <div className="badge-info">
-                  <h4>Arctic Code Vault</h4>
-                  <p>Contributed to code in the GitHub Archive program</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Contributions */}
-          <div className="github-contributions">
-            <h3>Last 30 days Contributions</h3>
-            <div className="contributions-card">
-              <GithubGrid />
-              <p className="contributions-footer">
-                Live contribution feed powered by GitHub Activity tracker (last 30 days).
-              </p>
-            </div>
-          </div>
-        </div>
-      </FadeInSection>
-
       <FadeInSection className="certifications-section" id="certifications-section">
         <h2 className="certifications-title">📜 Certifications</h2>
         <div className="certifications-list">

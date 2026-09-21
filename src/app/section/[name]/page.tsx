@@ -45,7 +45,7 @@ export default function SectionPage() {
     "Data Analysis":
       "Specialized in transforming unstructured datasets into interactive business intelligence dashboards using Power BI and Tableau. Experienced in developing DAX formulas, modeling relational schemas, and cleaning raw CSV data. Capable of building multimodal forensics pipelines tracking density metrics (Hounsfield Units), geospatial distributions, and engagement analytics to drive data-driven decision making.",
     "Salesforce":
-      "Specialized in Salesforce Platform development, CRM configuration, Apex programming, Lightning Web Components (LWC), and automated business workflows. Experienced in customizing Salesforce Sales Cloud and Service Cloud objects, building Process Builders/Flows, configuring Security & Access Controls, and designing custom SOQL queries for data management. Dedicated to leveraging Salesforce Cloud solutions to optimize business processes and CRM data integrity.",
+      "Specialized in Salesforce Platform development, CRM configuration, Apex programming, Lightning Web Components (LWC), and automated business workflows. Experienced in customizing Salesforce Sales Cloud and Service Cloud objects, building Process Builders/Flows, configuring Security & Access Controls, and designing custom SOQL queries for data management. Dedicated to leveraging Salesforce Cloud solutions to optimize business processes and CRM data integrity. Trailhead Profile: https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw",
   };
 
   /* =========================
@@ -245,13 +245,16 @@ export default function SectionPage() {
             {showProjects ? "Hide Projects" : "Show Projects"}
           </button>
 
-          {certificationsMap[sectionName] && certificationsMap[sectionName].length > 0 && (
-            <button
+          {sectionName === "Salesforce" && (
+            <a
+              href="https://www.salesforce.com/trailblazer/m7395cvox5qpayygtw"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn outline"
-              onClick={() => setShowCerts(!showCerts)}
+              style={{ textDecoration: "none" }}
             >
-              {showCerts ? "Hide Certifications" : "Certifications"}
-            </button>
+              Trailhead Profile
+            </a>
           )}
         </div>
 

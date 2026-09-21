@@ -156,7 +156,7 @@ export default function SectionPage() {
         description: "A Salesforce integration project for synchronizing external web application data payloads with Salesforce CRM.",
         details: "Engineered an end-to-end integration solution to seamlessly synchronize external web application data payloads with Salesforce CRM. Implemented custom Apex REST web service handlers, SOQL queries, and automated data mapping rules to maintain real-time data consistency and audit logging across systems.",
         tech: ["Salesforce", "Apex", "REST API", "Integration", "SOQL", "JSON Parsing"],
-        image: "/projects/salesforce-crm.png",
+        image: "/projects/external-web-sync.png",
         github: "https://github.com/SoHaM-250143/External-Web-Application-Sync",
       },
     ],
@@ -245,12 +245,14 @@ export default function SectionPage() {
             {showProjects ? "Hide Projects" : "Show Projects"}
           </button>
 
-          <button
-            className="btn outline"
-            onClick={() => setShowCerts(!showCerts)}
-          >
-            {showCerts ? "Hide Certifications" : "Certifications"}
-          </button>
+          {certificationsMap[sectionName] && certificationsMap[sectionName].length > 0 && (
+            <button
+              className="btn outline"
+              onClick={() => setShowCerts(!showCerts)}
+            >
+              {showCerts ? "Hide Certifications" : "Certifications"}
+            </button>
+          )}
         </div>
 
         {/* DETAILS */}
